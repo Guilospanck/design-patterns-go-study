@@ -5,7 +5,7 @@ It's a creational design pattern that lets you construct complex objects step by
 diffrent types and representations of an object using the same construction code.
 <div align="center">
   
-![image](https://user-images.githubusercontent.com/22435398/152323485-789ec90a-1fda-4e03-9a1a-cefbcb92474e.png)
+![image](https://user-images.githubusercontent.com/22435398/152424845-f5a62d9e-5b1e-43ce-9ace-d83b56ff9d87.png)
   
 </div>
 
@@ -33,3 +33,10 @@ Don’t forget about implementing a method for fetching the result of the constr
 The Builder pattern is used when the desired product is complex and requires multiple steps to complete. The Builder pattern keeps the product private until it's fully built.
 
 We're going to create two different houses: <code>igloo</code> and <code>normalHouse</code>
+<div align="center">
+  
+![Screenshot 2022-02-03 173841](https://user-images.githubusercontent.com/22435398/152425293-0d6473d7-4e64-4cf3-b931-8dd12ec6d332.png)
+  
+ </div>
+
+
