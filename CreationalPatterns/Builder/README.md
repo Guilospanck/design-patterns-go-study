@@ -3,6 +3,11 @@
 ## Intent
 It's a creational design pattern that lets you construct complex objects step by step. The pattern allows you to produce
 diffrent types and representations of an object using the same construction code.
+<div align="center">
+  
+![image](https://user-images.githubusercontent.com/22435398/152323485-789ec90a-1fda-4e03-9a1a-cefbcb92474e.png)
+  
+</div>
 
 ## Applicability
 - Use the Builder pattern to get rid of a "telescopic constructor".
