@@ -15,6 +15,6 @@ func getSportsFactory(brand string) (iSportsFactory, error) {
 	case "nike":
 		return &nike{}, nil
 	default:
-		return nil, fmt.Errorf("Wrong brand type passed")
+		return nil, fmt.Errorf("wrong brand type passed")
 	}
 }

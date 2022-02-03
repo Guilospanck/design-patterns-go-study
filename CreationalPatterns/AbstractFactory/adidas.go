@@ -1,6 +1,6 @@
 package main
 
-// Concrete factory
+// Concrete Factory (implements the abstract factory interface)
 type adidas struct{}
 
 func (a *adidas) makeShoe() iShoe {
