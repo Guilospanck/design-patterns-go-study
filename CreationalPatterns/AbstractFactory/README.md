@@ -3,8 +3,7 @@
 ## Intent
 It's a creational pattern that lets you produce families of related objects without specifying their concrete classes.
 
-## Problem
-[See this link](https://refactoring.guru/design-patterns/abstract-factory)
+![image](https://user-images.githubusercontent.com/22435398/152313890-f55659ac-ddd4-4986-ac3e-33f93f1ba75a.png)
 
 ## Applicability
 Use the Abstract Factory when your code needs to work with various families of related products, but don't want it to
