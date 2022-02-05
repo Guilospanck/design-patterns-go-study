@@ -16,7 +16,7 @@ func main() {
 	// client.transferData(usbPort)
 
 	// Using Adapter
-	usbAdapter := NewUSBToLightningAdapter(*usbPort)
+	usbAdapter := NewUSBToLightningAdapter(usbPort)
 	lightningAdapted := usbAdapter.transform()
 
 	fmt.Println("Sending data from a usb adapted to a lightning port:")
