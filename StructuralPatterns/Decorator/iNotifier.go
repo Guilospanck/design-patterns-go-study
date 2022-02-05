@@ -9,9 +9,9 @@ type INotifier interface {
 type Notifier struct{}
 
 func (n *Notifier) send(message string) {
-	fmt.Printf("Message %s sent!", message)
+	fmt.Printf("Message '%s' sent!\n===============\n", message)
 }
 
-func NewNotifier() *Notifier {
+func NewNotifier() INotifier {
 	return &Notifier{}
 }
