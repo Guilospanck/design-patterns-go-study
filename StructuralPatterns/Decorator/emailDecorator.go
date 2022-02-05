@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type EmailDecorator struct {
-	base *BaseNotifierDecorator
+	base INotifier
 }
 
 func (email *EmailDecorator) send(message string) {
@@ -11,8 +11,8 @@ func (email *EmailDecorator) send(message string) {
 	email.base.send(message)
 }
 
-func NewEmailDecorator(base BaseNotifierDecorator) *EmailDecorator {
+func NewEmailDecorator(base INotifier) *EmailDecorator {
 	return &EmailDecorator{
-		base: &base,
+		base: base,
 	}
 }

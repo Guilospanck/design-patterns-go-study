@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type SMSDecorator struct {
-	base *BaseNotifierDecorator
+	base INotifier
 }
 
 func (sms *SMSDecorator) send(message string) {
@@ -11,8 +11,8 @@ func (sms *SMSDecorator) send(message string) {
 	sms.base.send(message)
 }
 
-func NewSMSDecorator(base BaseNotifierDecorator) *SMSDecorator {
+func NewSMSDecorator(base INotifier) *SMSDecorator {
 	return &SMSDecorator{
-		base: &base,
+		base: base,
 	}
 }
