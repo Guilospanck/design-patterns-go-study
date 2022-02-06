@@ -14,6 +14,7 @@ func main() {
 		name: "Video1",
 		size: 222,
 	}
+	fmt.Printf("Original video: %+v\n", video)
 
 	// encode video
 	encoded := encodeDecodeFacade.EncodeVideo(video)
