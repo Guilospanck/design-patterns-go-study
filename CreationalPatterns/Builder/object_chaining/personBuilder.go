@@ -30,10 +30,6 @@ func (pb *PersonBuilder) Lives() *PersonAddressBuilder {
 	return &PersonAddressBuilder{*pb}
 }
 
-func (pb *PersonBuilder) Works() *PersonJobBuilder {
-	return &PersonJobBuilder{*pb}
-}
-
 // methods for PersonAddressBuilder
 func (pab *PersonAddressBuilder) At(address string) *PersonAddressBuilder {
 	pab.person.address = address
@@ -43,6 +39,10 @@ func (pab *PersonAddressBuilder) At(address string) *PersonAddressBuilder {
 func (pab *PersonAddressBuilder) WithPostalCode(pin string) *PersonAddressBuilder {
 	pab.person.pin = pin
 	return pab
+}
+
+func (pb *PersonBuilder) Works() *PersonJobBuilder {
+	return &PersonJobBuilder{*pb}
 }
 
 // methods for PersonJobBuilder
