@@ -18,8 +18,6 @@ func (b *Box) AddProducts(products []IComponent) {
 	b.products = append(b.products, products...)
 }
 
-func NewBox(products []IComponent) IComponent {
-	return &Box{
-		products: products,
-	}
+func NewBox() *Box {
+	return &Box{}
 }

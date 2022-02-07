@@ -6,6 +6,6 @@ func (p *Product) Price() float64 {
 	return 100
 }
 
-func NewProduct() IComponent {
+func NewProduct() *Product {
 	return &Product{}
 }

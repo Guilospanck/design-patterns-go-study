@@ -14,33 +14,29 @@ func main() {
 	product8 := NewProduct()
 	product9 := NewProduct()
 
-	// Put some products into boxes
-	productsToBox1 := []IComponent{
-		product1, product2, product3,
-	}
-
-	productsToBox2 := []IComponent{
-		product4, product5, product6,
-	}
-
-	productsToBox3 := []IComponent{
-		product7, product8, product9,
-	}
-
 	// Create some boxes with only products in them
-	box1 := NewBox(productsToBox1) // 350
-	box2 := NewBox(productsToBox2) // 350
-	box3 := NewBox(productsToBox3) // 350
+	box1 := NewBox()
+	box2 := NewBox()
+	box3 := NewBox()
+	box1.AddProducts([]IComponent{product1, product2, product3}) // 350
+	box2.AddProducts([]IComponent{product4, product5, product6}) // 350
+	box3.AddProducts([]IComponent{product7, product8, product9}) // 350
 
 	// create boxes with boxes (which have products)
-	box4 := NewBox([]IComponent{box1}) // 400
-	box5 := NewBox([]IComponent{box2}) // 400
-	box6 := NewBox([]IComponent{box3}) // 400
+	box4 := NewBox()
+	box4.AddProducts([]IComponent{box1}) // 400
+	box5 := NewBox()
+	box5.AddProducts([]IComponent{box2}) // 400
+	box6 := NewBox()
+	box6.AddProducts([]IComponent{box3}) // 400
 
 	// create boxes with more than one box
-	box7 := NewBox([]IComponent{box4, box5}) // 850
-	box8 := NewBox([]IComponent{box6, box1}) // 800
-	box9 := NewBox([]IComponent{box1, box8}) // 1200
+	box7 := NewBox()
+	box7.AddProducts([]IComponent{box4, box5}) // 850
+	box8 := NewBox()
+	box8.AddProducts([]IComponent{box6, box1}) // 800
+	box9 := NewBox()
+	box9.AddProducts([]IComponent{box1, box8}) // 1200
 
 	// get Container
 	container := NewContainer([]IComponent{
