@@ -2,7 +2,7 @@ package main
 
 func main() {
 	// gets TreeFactory
-	treeFactory := NewTreeFactory()
+	treeFactory := GetTreeFactorySingleInstance()
 
 	// gets new Forest
 	forest := NewForest(treeFactory)

@@ -7,6 +7,8 @@ type TreeFactory struct {
 	treeTypes []*TreeType
 }
 
+var treeFactorySingleInstance = &TreeFactory{}
+
 func (factory *TreeFactory) getTreeType(name, color, texture string) *TreeType {
 
 	treeType, err := factory._doesTreeTypeExist(name, color, texture)
@@ -32,6 +34,6 @@ func (factory *TreeFactory) _doesTreeTypeExist(name, color, texture string) (*Tr
 	return nil, fmt.Errorf("there is no treeType")
 }
 
-func NewTreeFactory() *TreeFactory {
-	return &TreeFactory{}
+func GetTreeFactorySingleInstance() *TreeFactory {
+	return treeFactorySingleInstance
 }
