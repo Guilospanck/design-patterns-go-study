@@ -1,17 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 func main() {
 
 	// create users
 	user1 := &User{
-		name: "Guilherme",
-		age:  25,
+		Name: "Guilherme",
+		Age:  25,
 	}
 	user2 := &User{
-		name: "Larry",
-		age:  50,
+		Name: "Larry",
+		Age:  50,
 	}
 
 	// collection of users
@@ -22,10 +25,35 @@ func main() {
 	// iterator
 	iterator := userCollection.createIterator()
 
+	userUnmarshalled := &User{}
 	// iterates
 	for iterator.hasNext() {
 		user := iterator.getNext()
-		fmt.Printf("User is %+v\n", user)
+		json.Unmarshal([]byte(user), userUnmarshalled)
+		fmt.Printf("User is %+v\n", userUnmarshalled)
+	}
+
+	/* ============= Friend =================== */
+	friend1 := NewFriend("Friend1", "Neighborhood1", "City1", 1)
+	friend2 := NewFriend("Friend2", "Neighborhood2", "City2", 2)
+	friend3 := NewFriend("Friend3", "Neighborhood3", "City3", 3)
+
+	// friends collection
+	friendsCollection := NewFriendsCollection([]*Friend{friend1, friend2, friend3})
+
+	// creates iterator for this collection
+	friendsIterator := friendsCollection.createIterator()
+
+	friendUnmarshalled := &Friend{}
+	// iterates
+	for friendsIterator.hasNext() {
+		friend := friendsIterator.getNext()
+		err := json.Unmarshal([]byte(friend), friendUnmarshalled)
+		if err != nil {
+			fmt.Println(err)
+			break
+		}
+		fmt.Printf("Friend: %+v\n", friendUnmarshalled)
 	}
 
 }
