@@ -1,6 +1,6 @@
 package main
 
 type ISubscriber interface {
-	Update(Data)
+	Update(string)
 	GetID() string
 }

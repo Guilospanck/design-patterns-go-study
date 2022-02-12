@@ -6,8 +6,8 @@ type CustomerSubscriber struct {
 	id string
 }
 
-func (sub *CustomerSubscriber) Update(data Data) {
-	fmt.Printf("Sending email to %s %+v\n", sub.id, data)
+func (sub *CustomerSubscriber) Update(data string) {
+	fmt.Printf("[Subscriber] Sending email to %s %s\n", sub.id, data)
 }
 
 func (sub *CustomerSubscriber) GetID() string {

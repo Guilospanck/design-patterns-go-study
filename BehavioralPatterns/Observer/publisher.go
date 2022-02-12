@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type Publisher struct {
-	data        Data
+	data        string
 	subscribers []ISubscriber
 }
 
@@ -37,15 +37,12 @@ func _removeFromSlice(subscribers []ISubscriber, subscriber ISubscriber) []ISubs
 	return subscribers
 }
 
-/*
-  Function of this publisher
-*/
 func (p *Publisher) updateAvailabilityOfData() {
-	fmt.Printf("Informing availability of data %+v...\n", p.data)
+	fmt.Printf("[Publisher] Informing availability of data %+v...\n", p.data)
 	p.NotifyAll()
 }
 
-func NewPublisher(data Data) *Publisher {
+func NewPublisher(data string) *Publisher {
 	return &Publisher{
 		data: data,
 	}
