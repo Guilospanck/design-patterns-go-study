@@ -10,7 +10,7 @@ type Data struct {
 
 type SendDataCommand struct {
 	data     Data
-	receiver *Receiver
+	receiver IReceiver
 }
 
 func (command *SendDataCommand) Execute() {
@@ -18,7 +18,7 @@ func (command *SendDataCommand) Execute() {
 	command.receiver.ReceiveData(command.data)
 }
 
-func NewSendDataCommand(data Data, receiver *Receiver) *SendDataCommand {
+func NewSendDataCommand(data Data, receiver IReceiver) *SendDataCommand {
 	return &SendDataCommand{
 		data:     data,
 		receiver: receiver,
