@@ -40,6 +40,7 @@ func (p *Publisher) Notify(topic string, subscriber ISubscriber) {
 	for _, sub := range subs {
 		if sub.GetID() == subscriber.GetID() {
 			sub.Update(p)
+			return
 		}
 	}
 }
