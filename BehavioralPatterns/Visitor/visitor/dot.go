@@ -1,6 +1,9 @@
-package main
+package visitor
 
-import "fmt"
+import (
+	"base/BehavioralPatterns/Visitor/interfaces"
+	"fmt"
+)
 
 type Dot struct {
 	x, y int
@@ -15,7 +18,7 @@ func (d *Dot) Draw() {
 	fmt.Printf("Drawing rectangle at (%d, %d)\n", d.x, d.y)
 }
 
-func (d *Dot) Accept(v IVisitor) {
+func (d *Dot) Accept(v interfaces.IVisitor) {
 	v.visitDot(d)
 }
 

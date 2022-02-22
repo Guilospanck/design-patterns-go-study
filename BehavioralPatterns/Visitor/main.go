@@ -1,13 +1,15 @@
 package main
 
+import "base/BehavioralPatterns/Visitor/visitor"
+
 func main() {
 	// Concrete visitor
-	exportXML := NewExportXMLVisitor()
+	exportXML := visitor.NewExportXMLVisitor()
 
 	// Shapes
-	rectangle := NewRectangle()
-	dot := NewDot()
-	circle := NewCircle()
+	rectangle := visitor.NewRectangle()
+	dot := visitor.NewDot()
+	circle := visitor.NewCircle()
 
 	// adding some coordinates (not required)
 	rectangle.Move(1, 1)

@@ -1,4 +1,4 @@
-package main
+package interfaces
 
 type IShape interface {
 	Move(x, y int)

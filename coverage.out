@@ -1,0 +1,18 @@
+mode: atomic
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/main.go:3.13,22.2 10 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/rectangle.go:9.36,12.2 2 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/rectangle.go:14.28,16.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/rectangle.go:18.40,20.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/rectangle.go:22.32,24.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/circle.go:9.33,12.2 2 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/circle.go:14.25,16.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/circle.go:18.37,20.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/circle.go:22.26,24.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/dot.go:9.30,12.2 2 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/dot.go:14.22,16.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/dot.go:18.34,20.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/dot.go:22.20,24.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/exportXMLVisitor.go:7.57,9.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/exportXMLVisitor.go:11.63,13.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/exportXMLVisitor.go:15.51,17.2 1 0
+github.com/Guilospanck/design-patterns-go-study/BehavioralPatterns/Visitor/exportXMLVisitor.go:19.46,21.2 1 0

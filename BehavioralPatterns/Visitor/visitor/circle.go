@@ -1,6 +1,10 @@
-package main
+package visitor
 
-import "fmt"
+import (
+	"fmt"
+
+	"base/BehavioralPatterns/Visitor/interfaces"
+)
 
 type Circle struct {
 	x, y int
@@ -15,7 +19,7 @@ func (c *Circle) Draw() {
 	fmt.Printf("Drawing circle at (%d, %d)\n", c.x, c.y)
 }
 
-func (c *Circle) Accept(v IVisitor) {
+func (c *Circle) Accept(v interfaces.IVisitor) {
 	v.visitCircle(c)
 }
 
