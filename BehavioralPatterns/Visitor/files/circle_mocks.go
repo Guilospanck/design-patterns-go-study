@@ -1,6 +1,4 @@
-package mocks
-
-import "base/BehavioralPatterns/Visitor/interfaces"
+package visitor
 
 type CircleMock struct {
 	X, Y int
@@ -14,7 +12,7 @@ func (c *CircleMock) Draw() {
 
 }
 
-func (c *CircleMock) Accept(v interfaces.IVisitor) {
+func (c *CircleMock) Accept(v IVisitor) {
 
 }
 

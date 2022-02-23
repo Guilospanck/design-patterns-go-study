@@ -1,7 +1,6 @@
 package visitor
 
 import (
-	"base/BehavioralPatterns/Visitor/interfaces"
 	"fmt"
 )
 
@@ -18,7 +17,7 @@ func (d *Dot) Draw() {
 	fmt.Printf("Drawing rectangle at (%d, %d)\n", d.x, d.y)
 }
 
-func (d *Dot) Accept(v interfaces.IVisitor) {
+func (d *Dot) Accept(v IVisitor) {
 	v.visitDot(d)
 }
 

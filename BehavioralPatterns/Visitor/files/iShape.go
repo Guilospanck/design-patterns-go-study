@@ -1,4 +1,4 @@
-package interfaces
+package visitor
 
 type IShape interface {
 	Move(x, y int)

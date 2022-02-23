@@ -1,6 +1,6 @@
 package main
 
-import "base/BehavioralPatterns/Visitor/visitor"
+import visitor "base/BehavioralPatterns/Visitor/files"
 
 func main() {
 	// Concrete visitor

@@ -1,4 +1,4 @@
-package mocks
+package visitor
 
 type RectangleMock struct {
 	X, Y int

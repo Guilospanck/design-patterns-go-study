@@ -1,7 +1,6 @@
 package visitor
 
 import (
-	"base/BehavioralPatterns/Visitor/interfaces"
 	"fmt"
 )
 
@@ -18,7 +17,7 @@ func (r *Rectangle) Draw() {
 	fmt.Printf("Drawing rectangle at (%d, %d)\n", r.x, r.y)
 }
 
-func (r *Rectangle) Accept(v interfaces.IVisitor) {
+func (r *Rectangle) Accept(v IVisitor) {
 	v.visitRectangle(r)
 }
 

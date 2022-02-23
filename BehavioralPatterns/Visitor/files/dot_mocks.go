@@ -1,4 +1,4 @@
-package mocks
+package visitor
 
 type DotMock struct {
 	X, Y int
