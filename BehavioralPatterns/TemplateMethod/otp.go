@@ -10,7 +10,7 @@ type IOTP interface {
 	publishMetrics()
 }
 
-// embedding a interface into a struct is Go way of creating a "abstract class"
+// embedding a interface into a struct is Go way of creating an "abstract class"
 type OTP struct {
 	iOTP IOTP
 }

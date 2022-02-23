@@ -4,20 +4,20 @@ import "fmt"
 
 type SMSOTP struct {
 	OTP
+	randomOTP string
+	message   string
 }
 
 func (sms *SMSOTP) generateRandomOTP(length int) string {
 	fmt.Println("[SMS] Generating random OTP...")
-	randomOTP := "1234556789"
 
-	return randomOTP[:length]
+	return sms.randomOTP[:length]
 }
 
 func (sms *SMSOTP) getMessage(otp string) string {
 	fmt.Printf("[SMS] Getting message from OTP %s\n", otp)
-	message := "[SMS] This is an OTP message"
 
-	return message
+	return sms.message
 }
 
 func (sms *SMSOTP) sendNotification(message string) error {
@@ -29,6 +29,9 @@ func (sms *SMSOTP) publishMetrics() {
 	fmt.Println("[SMS] Publishing metrics...")
 }
 
-func NewSMSOTP() *SMSOTP {
-	return &SMSOTP{}
+func NewSMSOTP(message, randomOTP string) *SMSOTP {
+	return &SMSOTP{
+		randomOTP: randomOTP,
+		message:   message,
+	}
 }
