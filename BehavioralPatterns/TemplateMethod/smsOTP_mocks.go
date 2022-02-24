@@ -1,7 +1,7 @@
 package main
 
 type SMSOTPMock struct {
-	OTP
+	OTPMock
 }
 
 func (sms *SMSOTPMock) generateRandomOTP(length int) string {

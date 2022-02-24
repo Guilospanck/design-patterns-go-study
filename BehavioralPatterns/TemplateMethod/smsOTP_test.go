@@ -37,5 +37,28 @@ func (s *SMSOTPSuite) TestGenerateRandomOTP() {
 
 	// assert
 	require.Equal(s.T(), randomOTP, mockRandomOTP)
+}
 
+func (s *SMSOTPSuite) TestGetMessage() {
+	// arrange
+	length := s.mock.getSMSOTPLength()
+	mockRandomOTP := s.mock.getRandomOTP()[:length]
+	mockMessage := s.mock.getSMSMessage()
+
+	// act
+	message := s.smsOTP.getMessage(mockRandomOTP)
+
+	// assert
+	require.Equal(s.T(), message, mockMessage)
+}
+
+func (s *SMSOTPSuite) TestSendNotification() {
+	// arrange
+	messageMock := s.mock.getSMSMessage()
+
+	// act
+	err := s.smsOTP.sendNotification(messageMock)
+
+	// assert
+	require.NoError(s.T(), err)
 }

@@ -1,14 +1,15 @@
 package main
 
 func main() {
+	// sms otp
 	message := "[SMS] This is an OTP message"
 	randomOTP := "1234556789"
-
-	// sms otp
 	smsOTP := NewSMSOTP(message, randomOTP)
 
 	// email otp
-	emailOTP := NewEmailOTP()
+	emailMessage := "[EMAIL] This is an OTP message"
+	emailRandomOTP := "456487945"
+	emailOTP := NewEmailOTP(emailRandomOTP, emailMessage)
 
 	// get otp
 	otp := NewOTP(smsOTP)

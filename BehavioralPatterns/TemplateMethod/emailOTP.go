@@ -4,20 +4,19 @@ import "fmt"
 
 type EmailOTP struct {
 	OTP
+	randomOTP, message string
 }
 
 func (email *EmailOTP) generateRandomOTP(length int) string {
 	fmt.Println("[EMAIL] Generating random OTP...")
-	randomOTP := "456487945"
 
-	return randomOTP[:length]
+	return email.randomOTP[:length]
 }
 
 func (email *EmailOTP) getMessage(otp string) string {
 	fmt.Printf("[EMAIL] Getting message from OTP %s\n", otp)
-	message := "[EMAIL] This is an OTP message"
 
-	return message
+	return email.message
 }
 
 func (email *EmailOTP) sendNotification(message string) error {
@@ -29,6 +28,9 @@ func (email *EmailOTP) publishMetrics() {
 	fmt.Println("[EMAIL] Publishing metrics...")
 }
 
-func NewEmailOTP() *EmailOTP {
-	return &EmailOTP{}
+func NewEmailOTP(randomOTP, message string) *EmailOTP {
+	return &EmailOTP{
+		randomOTP: randomOTP,
+		message:   message,
+	}
 }
