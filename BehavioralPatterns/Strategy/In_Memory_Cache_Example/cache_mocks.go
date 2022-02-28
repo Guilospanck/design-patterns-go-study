@@ -6,44 +6,34 @@ import (
 	"strings"
 )
 
-type ICache interface {
-	SetEvictStrategy(evictStrategy IEvictStrategy)
-	SetMaxCapacity(maxCapacity int)
-	Add(key, value string)
-	PrintCache()
-	Evict(key string)
-}
-
-// Context
-type Cache struct {
+type CacheMocks struct {
 	evictStrategy IEvictStrategy
 	storage       map[string]string
 	maxCapacity   int
 }
 
-func (c *Cache) SetEvictStrategy(evictStrategy IEvictStrategy) {
+func (c *CacheMocks) SetEvictStrategy(evictStrategy IEvictStrategy) {
 	c.evictStrategy = evictStrategy
 }
 
-func (c *Cache) SetMaxCapacity(maxCapacity int) {
+func (c *CacheMocks) SetMaxCapacity(maxCapacity int) {
 	c.maxCapacity = maxCapacity
 }
 
-func (c *Cache) Add(key, value string) {
+func (c *CacheMocks) Add(key, value string) {
 	if len(c.storage) >= c.maxCapacity {
 		c.Evict(key)
 	}
 	c.storage[key] = value
 }
 
-func (c *Cache) PrintCache() {
-	for key, value := range c.storage {
-		fmt.Printf("[%s]: [%s]\n", key, value)
-	}
-	fmt.Println("================================")
+var PrintCacheCalled bool = false
+
+func (c *CacheMocks) PrintCache() {
+	PrintCacheCalled = true
 }
 
-func (c *Cache) Evict(key string) {
+func (c *CacheMocks) Evict(key string) {
 	c.evictStrategy.Evict(c)
 
 	index := strings.Split(key, "key")
@@ -53,10 +43,18 @@ func (c *Cache) Evict(key string) {
 	delete(c.storage, keyToBeDeleted)
 }
 
-func NewCache(evictStrategy IEvictStrategy) *Cache {
-	return &Cache{
+func NewCacheMocks(evictStrategy IEvictStrategy) *CacheMocks {
+	return &CacheMocks{
 		evictStrategy: evictStrategy,
 		storage:       make(map[string]string),
 		maxCapacity:   2,
 	}
+}
+
+var MapMocks = map[string]string{
+	"key1": "value1",
+	"key2": "value2",
+	"key3": "value3",
+	"key4": "value4",
+	"key5": "value5",
 }

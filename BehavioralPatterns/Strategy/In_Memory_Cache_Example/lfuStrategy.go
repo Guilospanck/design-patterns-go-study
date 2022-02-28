@@ -4,7 +4,7 @@ import "fmt"
 
 type LFUStrategy struct{}
 
-func (strategy *LFUStrategy) Evict(*Cache) {
+func (strategy *LFUStrategy) Evict(ICache) {
 	fmt.Println("Removing using LFU strategy...")
 }
 

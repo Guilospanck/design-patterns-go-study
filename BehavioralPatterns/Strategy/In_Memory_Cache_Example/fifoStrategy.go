@@ -4,7 +4,7 @@ import "fmt"
 
 type FIFOStrategy struct{}
 
-func (strategy *FIFOStrategy) Evict(*Cache) {
+func (strategy *FIFOStrategy) Evict(ICache) {
 	fmt.Println("Removing using FIFO strategy...")
 }
 
