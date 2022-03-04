@@ -20,7 +20,7 @@ func main() {
 	// get otp with email
 	otp = NewOTP(emailOTP)
 
-	// generate sms otp using skeleton
+	// generate email otp using skeleton
 	otp.generateAndSendOTP(5)
 
 }

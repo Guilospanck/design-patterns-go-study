@@ -7,7 +7,7 @@ type LockedState struct {
 }
 
 func (s *LockedState) ClickLock() {
-	if s.context.IsPlaying {
+	if s.context.GetIsPlaying() {
 		s.context.ChangeState(NewPlayingState(s.context))
 	} else {
 		s.context.ChangeState(NewReadyState(s.context))
@@ -29,7 +29,7 @@ func (s *LockedState) ClickPrevious() {
 	fmt.Println("Doing nothing...")
 }
 
-func NewLockedState(context *PlayerContext) *LockedState {
+func NewLockedState(context IPlayerContext) *LockedState {
 	return &LockedState{
 		State: NewState(context),
 	}

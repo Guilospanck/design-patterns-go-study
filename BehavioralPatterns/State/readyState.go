@@ -9,7 +9,7 @@ func (s *ReadyState) ClickLock() {
 }
 
 func (s *ReadyState) ClickPlay() {
-	s.context.IsPlaying = true
+	s.context.SetIsPlaying(true)
 	s.context.ChangeState(NewPlayingState(s.context))
 }
 
@@ -21,7 +21,7 @@ func (s *ReadyState) ClickPrevious() {
 	s.context.PreviousSong()
 }
 
-func NewReadyState(context *PlayerContext) *ReadyState {
+func NewReadyState(context IPlayerContext) *ReadyState {
 	return &ReadyState{
 		State: NewState(context),
 	}

@@ -7,7 +7,7 @@ type LockedStateMock struct {
 }
 
 func (s *LockedStateMock) ClickLock() {
-	if s.context.IsPlaying {
+	if s.context.GetIsPlaying() {
 		s.context.ChangeState(NewPlayingState(s.context))
 	} else {
 		s.context.ChangeState(NewReadyState(s.context))
@@ -29,7 +29,7 @@ func (s *LockedStateMock) ClickPrevious() {
 	fmt.Println("Doing nothing...")
 }
 
-func NewLockedStateMock(context *PlayerContext) *LockedStateMock {
+func NewLockedStateMock(context IPlayerContext) *LockedStateMock {
 	return &LockedStateMock{
 		State: NewState(context),
 	}

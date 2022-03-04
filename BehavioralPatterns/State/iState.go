@@ -8,10 +8,10 @@ type IState interface {
 }
 
 type State struct {
-	context *PlayerContext
+	context IPlayerContext
 }
 
-func NewState(context *PlayerContext) *State {
+func NewState(context IPlayerContext) *State {
 	return &State{
 		context: context,
 	}

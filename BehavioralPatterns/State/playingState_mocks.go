@@ -1,14 +1,14 @@
 package main
 
-type PlayingState struct {
+type PlayingStateMock struct {
 	*State
 }
 
-func (s *PlayingState) ClickLock() {
+func (s *PlayingStateMock) ClickLock() {
 	s.context.ChangeState(NewLockedState(s.context))
 }
 
-func (s *PlayingState) ClickPlay() {
+func (s *PlayingStateMock) ClickPlay() {
 	if s.context.GetIsPlaying() {
 		s.context.StopSong()
 		s.context.ChangeState(NewReadyState(s.context))
@@ -17,16 +17,16 @@ func (s *PlayingState) ClickPlay() {
 	}
 }
 
-func (s *PlayingState) ClickNext() {
+func (s *PlayingStateMock) ClickNext() {
 	s.context.NextSong()
 }
 
-func (s *PlayingState) ClickPrevious() {
+func (s *PlayingStateMock) ClickPrevious() {
 	s.context.PreviousSong()
 }
 
-func NewPlayingState(context IPlayerContext) *PlayingState {
-	return &PlayingState{
+func NewPlayingStateMock(context IPlayerContext) *PlayingStateMock {
+	return &PlayingStateMock{
 		State: NewState(context),
 	}
 }

@@ -8,6 +8,10 @@ type PlayerContext struct {
 	State     IState
 }
 
+func (context *PlayerContext) GetState() IState {
+	return context.State
+}
+
 func (context *PlayerContext) ChangeState(state IState) {
 	context.State = state
 }
@@ -42,9 +46,17 @@ func (context *PlayerContext) StopSong() {
 	fmt.Println("Stop song...")
 }
 
+func (context *PlayerContext) GetIsPlaying() bool {
+	return context.IsPlaying
+}
+
+func (context *PlayerContext) SetIsPlaying(isPlaying bool) {
+	context.IsPlaying = isPlaying
+}
+
 func NewPlayerContext() *PlayerContext {
-	player := &PlayerContext{}
-	readyState := NewReadyState(player)
-	player.State = readyState
-	return player
+	playerContext := &PlayerContext{}
+	readyState := NewReadyState(playerContext)
+	playerContext.State = readyState
+	return playerContext
 }
