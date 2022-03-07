@@ -1,4 +1,6 @@
-# design-patterns-go-study
+# Design Patterns in Go
+[![CircleCI](https://circleci.com/gh/Guilospanck/design-patterns-go-study/tree/main.svg?style=svg)](https://circleci.com/gh/Guilospanck/design-patterns-go-study/tree/main)
+
 
 Studies following [Refactoring Guru](https://refactoring.guru/design-patterns/go)
 
