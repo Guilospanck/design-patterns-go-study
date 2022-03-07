@@ -8,9 +8,9 @@ type LockedStateMock struct {
 
 func (s *LockedStateMock) ClickLock() {
 	if s.context.GetIsPlaying() {
-		s.context.ChangeState(NewPlayingState(s.context))
+		s.context.ChangeState(NewPlayingStateMock(s.context))
 	} else {
-		s.context.ChangeState(NewReadyState(s.context))
+		s.context.ChangeState(NewReadyStateMock(s.context))
 	}
 }
 

@@ -5,13 +5,13 @@ type PlayingStateMock struct {
 }
 
 func (s *PlayingStateMock) ClickLock() {
-	s.context.ChangeState(NewLockedState(s.context))
+	s.context.ChangeState(NewLockedStateMock(s.context))
 }
 
 func (s *PlayingStateMock) ClickPlay() {
 	if s.context.GetIsPlaying() {
 		s.context.StopSong()
-		s.context.ChangeState(NewReadyState(s.context))
+		s.context.ChangeState(NewReadyStateMock(s.context))
 	} else {
 		s.context.SetIsPlaying(true)
 	}

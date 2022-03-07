@@ -8,6 +8,12 @@ type PlayerContextMock struct {
 	State     IState
 }
 
+var (
+	NextSongClicked     = false
+	PreviousSongClicked = false
+	StopSongClicked     = false
+)
+
 func (context *PlayerContextMock) GetState() IState {
 	return context.State
 }
@@ -35,14 +41,17 @@ func (context *PlayerContextMock) ClickPrevious() {
 
 // State may call some methods in the context
 func (context *PlayerContextMock) NextSong() {
+	NextSongClicked = true
 	fmt.Println("Next song...")
 }
 
 func (context *PlayerContextMock) PreviousSong() {
+	PreviousSongClicked = true
 	fmt.Println("Previous song...")
 }
 
 func (context *PlayerContextMock) StopSong() {
+	StopSongClicked = true
 	fmt.Println("Stop song...")
 }
 

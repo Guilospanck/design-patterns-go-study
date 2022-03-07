@@ -22,7 +22,8 @@ func (s *LockedStateSuite) SetupSuite() {
 	s.state = NewLockedState(s.contextMock)
 }
 
-func (s *LockedStateSuite) AfterTests(_, _ string) {
+func (s *LockedStateSuite) AfterTest(_, _ string) {
+	s.SetupSuite()
 	require.NoError(s.T(), nil)
 }
 
@@ -38,4 +39,34 @@ func (s *LockedStateSuite) TestClickLock() {
 
 	// assert
 	require.Equal(s.T(), "*main.ReadyState", fmt.Sprintf("%T", s.state.context.GetState()))
+}
+
+func (s *LockedStateSuite) TestClickPlay() {
+	// arrange
+
+	// act
+	s.state.ClickPlay()
+
+	// assert
+	require.Equal(s.T(), "*main.ReadyStateMock", fmt.Sprintf("%T", s.state.context.GetState()))
+}
+
+func (s *LockedStateSuite) TestClickNext() {
+	// arrange
+
+	// act
+	s.state.ClickNext()
+
+	// assert
+	require.Equal(s.T(), "*main.ReadyStateMock", fmt.Sprintf("%T", s.state.context.GetState()))
+}
+
+func (s *LockedStateSuite) TestClickPrevious() {
+	// arrange
+
+	// act
+	s.state.ClickPrevious()
+
+	// assert
+	require.Equal(s.T(), "*main.ReadyStateMock", fmt.Sprintf("%T", s.state.context.GetState()))
 }
