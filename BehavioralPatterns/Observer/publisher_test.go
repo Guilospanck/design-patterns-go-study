@@ -92,7 +92,7 @@ func (s *PublisherSuite) TestUpdateAvailabilityOfData() {
 	s.pub.AddSubscriber(sub2)
 
 	// act
-	s.pub.NotifyAll()
+	s.pub.updateAvailabilityOfData()
 
 	// assert
 	require.Equal(s.T(), true, sub1.updateCalled)
