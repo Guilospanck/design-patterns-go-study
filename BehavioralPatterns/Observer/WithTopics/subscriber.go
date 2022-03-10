@@ -22,8 +22,11 @@ func (s *Subscriber) GetID() string {
 	return s.id
 }
 
-func NewSubscriber() *Subscriber {
+func NewSubscriber(optionalId ...uuid.UUID) *Subscriber {
 	id := uuid.New()
+	if len(optionalId) > 0 {
+		id = optionalId[0]
+	}
 
 	return &Subscriber{
 		id: id.String(),
