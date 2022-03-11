@@ -1,33 +1,12 @@
-package tests
+package implementations
 
 import (
-	"base/BehavioralPatterns/Mediator/StationManagerExample/implementations"
-	"base/BehavioralPatterns/Mediator/StationManagerExample/interfaces"
 	"base/BehavioralPatterns/Mediator/StationManagerExample/mocks"
 	"testing"
 
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )
-
-type StationManagerTestSuite struct {
-	suite.Suite
-
-	station        *implementations.StationManager
-	freightTrain   interfaces.ITrain
-	passengerTrain interfaces.ITrain
-}
-
-func (s *StationManagerTestSuite) SetupSuite() {
-	s.station = implementations.NewStationManager()
-	s.freightTrain = mocks.NewFreightTrainMocks(s.station)
-	s.passengerTrain = mocks.NewPassengerTrainMocks(s.station)
-}
-
-func (s *StationManagerTestSuite) AfterTest(_, _ string) {
-	s.SetupSuite()
-	require.NoError(s.T(), nil)
-}
 
 func TestStationManagerTestSuiteInit(t *testing.T) {
 	suite.Run(t, new(StationManagerTestSuite))
