@@ -10,27 +10,27 @@ import (
 	"github.com/stretchr/testify/suite"
 )
 
-type PassengerTrainTestSuite struct {
+type FreightTrainTestSuite struct {
 	suite.Suite
 
-	train    *implementations.PassengerTrain
+	train    *implementations.FreightTrain
 	mediator interfaces.IMediator
 }
 
-func (s *PassengerTrainTestSuite) SetupSuite() {
+func (s *FreightTrainTestSuite) SetupSuite() {
 	s.mediator = mocks.NewStationManagerMock()
-	s.train = implementations.NewPassengerTrain(s.mediator)
+	s.train = implementations.NewFreightTrain(s.mediator)
 }
 
-func (s *PassengerTrainTestSuite) AfterTest(_, _ string) {
+func (s *FreightTrainTestSuite) AfterTest(_, _ string) {
 	require.NoError(s.T(), nil)
 }
 
-func TestPassengerTrainTestSuiteInit(t *testing.T) {
-	suite.Run(t, new(PassengerTrainTestSuite))
+func TestFreightTrainTestSuiteInit(t *testing.T) {
+	suite.Run(t, new(FreightTrainTestSuite))
 }
 
-func (s *PassengerTrainTestSuite) TestArrive() {
+func (s *FreightTrainTestSuite) TestArrive() {
 	// arrange
 
 	// act
@@ -40,7 +40,7 @@ func (s *PassengerTrainTestSuite) TestArrive() {
 	require.Equal(s.T(), true, mocks.StationManagerCanArriveCalled)
 }
 
-func (s *PassengerTrainTestSuite) TestDepart() {
+func (s *FreightTrainTestSuite) TestDepart() {
 	// arrange
 
 	// act
@@ -50,7 +50,7 @@ func (s *PassengerTrainTestSuite) TestDepart() {
 	require.Equal(s.T(), true, mocks.StationManagerNotifyAboutDepartureCalled)
 }
 
-func (s *PassengerTrainTestSuite) TestPermitArrival() {
+func (s *FreightTrainTestSuite) TestPermitArrival() {
 	// arrange
 
 	// act

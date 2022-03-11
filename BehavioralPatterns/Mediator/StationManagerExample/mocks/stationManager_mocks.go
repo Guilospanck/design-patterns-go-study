@@ -5,13 +5,23 @@ import (
 )
 
 type StationManagerMock struct {
-	IsPlatformFree bool
-	TrainQueue     []interfaces.ITrain
+}
+
+var (
+	StationManagerCanArriveCalled            = false
+	StationManagerNotifyAboutDepartureCalled = false
+)
+
+func (stationManager *StationManagerMock) CanArrive(train interfaces.ITrain) bool {
+	StationManagerCanArriveCalled = true
+
+	return true
+}
+
+func (stationManager *StationManagerMock) NotifyAboutDeparture() {
+	StationManagerNotifyAboutDepartureCalled = true
 }
 
 func NewStationManagerMock() *StationManagerMock {
-	return &StationManagerMock{
-		IsPlatformFree: false,
-		TrainQueue:     make([]interfaces.ITrain, 0),
-	}
+	return &StationManagerMock{}
 }
