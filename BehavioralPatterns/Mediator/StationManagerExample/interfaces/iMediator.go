@@ -1,4 +1,4 @@
-package main
+package interfaces
 
 // IMediator
 type IMediator interface {

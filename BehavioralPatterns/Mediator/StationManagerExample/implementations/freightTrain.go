@@ -1,10 +1,13 @@
-package main
+package implementations
 
-import "fmt"
+import (
+	"base/BehavioralPatterns/Mediator/StationManagerExample/interfaces"
+	"fmt"
+)
 
 // concrete component
 type FreightTrain struct {
-	Mediator IMediator
+	Mediator interfaces.IMediator
 }
 
 func (freightTrain *FreightTrain) Arrive() {
@@ -25,7 +28,7 @@ func (freightTrain *FreightTrain) PermitArrival() {
 	freightTrain.Arrive()
 }
 
-func NewFreightTrain(mediator IMediator) *FreightTrain {
+func NewFreightTrain(mediator interfaces.IMediator) *FreightTrain {
 	return &FreightTrain{
 		Mediator: mediator,
 	}

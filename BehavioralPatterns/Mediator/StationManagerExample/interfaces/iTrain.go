@@ -1,4 +1,4 @@
-package main
+package interfaces
 
 // icomponent
 type ITrain interface {

@@ -1,10 +1,14 @@
 package main
 
-func main() {
-	stationManager := NewStationManager()
+import (
+	implementations "base/BehavioralPatterns/Mediator/StationManagerExample/implementations"
+)
 
-	passengerTrain := NewPassengerTrain(stationManager)
-	freightTrain := NewFreightTrain(stationManager)
+func main() {
+	stationManager := implementations.NewStationManager()
+
+	passengerTrain := implementations.NewPassengerTrain(stationManager)
+	freightTrain := implementations.NewFreightTrain(stationManager)
 
 	passengerTrain.Arrive()
 	freightTrain.Arrive()

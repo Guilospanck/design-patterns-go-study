@@ -1,12 +1,14 @@
-package main
+package implementations
+
+import "base/BehavioralPatterns/Mediator/StationManagerExample/interfaces"
 
 // Concrete mediator
 type StationManager struct {
 	IsPlatformFree bool
-	TrainQueue     []ITrain
+	TrainQueue     []interfaces.ITrain
 }
 
-func (stationManager *StationManager) CanArrive(train ITrain) bool {
+func (stationManager *StationManager) CanArrive(train interfaces.ITrain) bool {
 	if stationManager.IsPlatformFree {
 		stationManager.IsPlatformFree = false
 		return true
@@ -16,13 +18,15 @@ func (stationManager *StationManager) CanArrive(train ITrain) bool {
 }
 
 func (stationManager *StationManager) NotifyAboutDeparture() {
-	if !stationManager.IsPlatformFree {
-		stationManager.IsPlatformFree = true
-	}
+	stationManager.IsPlatformFree = true
+
 	if len(stationManager.TrainQueue) > 0 {
-		firstTrainInQueue := stationManager.TrainQueue[0]
 		stationManager.TrainQueue = stationManager.TrainQueue[1:]
-		firstTrainInQueue.PermitArrival()
+
+		if len(stationManager.TrainQueue) > 0 {
+			firstTrainInQueue := stationManager.TrainQueue[0]
+			firstTrainInQueue.PermitArrival()
+		}
 	}
 }
 
