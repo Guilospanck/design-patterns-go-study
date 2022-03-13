@@ -1,4 +1,4 @@
-package main
+package implementations
 
 // Client Code
 type User struct {

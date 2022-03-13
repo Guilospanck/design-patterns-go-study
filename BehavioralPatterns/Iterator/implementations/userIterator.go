@@ -1,4 +1,4 @@
-package main
+package implementations
 
 import (
 	"encoding/json"
@@ -10,12 +10,12 @@ type UserIterator struct {
 	users []*User
 }
 
-func (u *UserIterator) hasNext() bool {
+func (u *UserIterator) HasNext() bool {
 	return u.index < len(u.users)
 }
 
-func (u *UserIterator) getNext() string {
-	if u.hasNext() {
+func (u *UserIterator) GetNext() string {
+	if u.HasNext() {
 		user := u.users[u.index]
 		u.index++
 		userBytes, _ := json.Marshal(user)

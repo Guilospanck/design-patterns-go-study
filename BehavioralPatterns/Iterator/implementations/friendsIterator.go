@@ -1,4 +1,4 @@
-package main
+package implementations
 
 import "encoding/json"
 
@@ -7,12 +7,12 @@ type FriendsIterator struct {
 	Friends []*Friend
 }
 
-func (iterator *FriendsIterator) hasNext() bool {
+func (iterator *FriendsIterator) HasNext() bool {
 	return iterator.index < len(iterator.Friends)
 }
 
-func (iterator *FriendsIterator) getNext() string {
-	if iterator.hasNext() {
+func (iterator *FriendsIterator) GetNext() string {
+	if iterator.HasNext() {
 		friend := iterator.Friends[iterator.index]
 		iterator.index++
 

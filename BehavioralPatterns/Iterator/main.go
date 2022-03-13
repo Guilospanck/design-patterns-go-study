@@ -1,53 +1,52 @@
 package main
 
 import (
+	"base/BehavioralPatterns/Iterator/implementations"
 	"encoding/json"
 	"fmt"
 )
 
 func main() {
-
 	// create users
-	user1 := &User{
+	user1 := &implementations.User{
 		Name: "Guilherme",
 		Age:  25,
 	}
-	user2 := &User{
+	user2 := &implementations.User{
 		Name: "Larry",
 		Age:  50,
 	}
 
 	// collection of users
-	userCollection := &UserCollection{
-		users: []*User{user1, user2},
-	}
+	userCollection := implementations.NewUserCollection([]*implementations.User{user1, user2})
 
 	// iterator
-	iterator := userCollection.createIterator()
+	iterator := userCollection.CreateIterator()
 
-	userUnmarshalled := &User{}
+	userUnmarshalled := &implementations.User{}
+
 	// iterates
-	for iterator.hasNext() {
-		user := iterator.getNext()
+	for iterator.HasNext() {
+		user := iterator.GetNext()
 		json.Unmarshal([]byte(user), userUnmarshalled)
 		fmt.Printf("User is %+v\n", userUnmarshalled)
 	}
 
 	/* ============= Friend =================== */
-	friend1 := NewFriend("Friend1", "Neighborhood1", "City1", 1)
-	friend2 := NewFriend("Friend2", "Neighborhood2", "City2", 2)
-	friend3 := NewFriend("Friend3", "Neighborhood3", "City3", 3)
+	friend1 := implementations.NewFriend("Friend1", "Neighborhood1", "City1", 1)
+	friend2 := implementations.NewFriend("Friend2", "Neighborhood2", "City2", 2)
+	friend3 := implementations.NewFriend("Friend3", "Neighborhood3", "City3", 3)
 
 	// friends collection
-	friendsCollection := NewFriendsCollection([]*Friend{friend1, friend2, friend3})
+	friendsCollection := implementations.NewFriendsCollection([]*implementations.Friend{friend1, friend2, friend3})
 
 	// creates iterator for this collection
-	friendsIterator := friendsCollection.createIterator()
+	friendsIterator := friendsCollection.CreateIterator()
 
-	friendUnmarshalled := &Friend{}
+	friendUnmarshalled := &implementations.Friend{}
 	// iterates
-	for friendsIterator.hasNext() {
-		friend := friendsIterator.getNext()
+	for friendsIterator.HasNext() {
+		friend := friendsIterator.GetNext()
 		err := json.Unmarshal([]byte(friend), friendUnmarshalled)
 		if err != nil {
 			fmt.Println(err)

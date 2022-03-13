@@ -1,4 +1,4 @@
-package main
+package implementations
 
 type Friend struct {
 	Name, Neighborhood, City string
@@ -18,7 +18,7 @@ type FriendsCollection struct {
 	Friends []*Friend
 }
 
-func (collection *FriendsCollection) createIterator() IIterator {
+func (collection *FriendsCollection) CreateIterator() *FriendsIterator {
 	return NewFriendsIterator(collection.Friends)
 }
 
