@@ -11,15 +11,13 @@ import (
 type FriendsCollectionSuite struct {
 	suite.Suite
 
-	friendsIteratorMock *FriendsIteratorMocks
-	friendsCollection   *FriendsCollection
-	friendsMocks        []*Friend
+	friendsCollection *FriendsCollection
+	friendsMocks      []*Friend
 }
 
 func (s *FriendsCollectionSuite) SetupSuite() {
 	s.friendsMocks = []*Friend{FriendMock1, FriendMock2, FriendMock3}
 
-	s.friendsIteratorMock = NewFriendsIteratorMocks(s.friendsMocks)
 	s.friendsCollection = NewFriendsCollection(s.friendsMocks)
 }
 
