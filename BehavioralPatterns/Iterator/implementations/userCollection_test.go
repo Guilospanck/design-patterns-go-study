@@ -20,7 +20,7 @@ func (s *UserCollectionSuite) SetupSuite() {
 	s.collection = NewUserCollection(s.userMocks)
 }
 
-func (s *UserCollectionSuite) AfterTest() {
+func (s *UserCollectionSuite) AfterTest(_, _ string) {
 	s.SetupSuite()
 	require.NoError(s.T(), nil)
 }
