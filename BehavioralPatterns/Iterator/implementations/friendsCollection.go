@@ -1,5 +1,7 @@
 package implementations
 
+import "base/BehavioralPatterns/Iterator/interfaces"
+
 type Friend struct {
 	Name, Neighborhood, City string
 	Age                      int
@@ -18,7 +20,7 @@ type FriendsCollection struct {
 	Friends []*Friend
 }
 
-func (collection *FriendsCollection) CreateIterator() *FriendsIterator {
+func (collection *FriendsCollection) CreateIterator() interfaces.IIterator {
 	return NewFriendsIterator(collection.Friends)
 }
 

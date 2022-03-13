@@ -23,7 +23,6 @@ func (iterator *FriendsIterator) GetNext() string {
 	}
 
 	return ""
-
 }
 
 func NewFriendsIterator(friends []*Friend) *FriendsIterator {
