@@ -17,10 +17,7 @@ type FriendsCollectionSuite struct {
 }
 
 func (s *FriendsCollectionSuite) SetupSuite() {
-	friend1 := NewFriend("Friend1", "Neighborhood1", "City1", 1)
-	friend2 := NewFriend("Friend2", "Neighborhood2", "City2", 2)
-	friend3 := NewFriend("Friend3", "Neighborhood3", "City3", 3)
-	s.friendsMocks = []*Friend{friend1, friend2, friend3}
+	s.friendsMocks = []*Friend{FriendMock1, FriendMock2, FriendMock3}
 
 	s.friendsIteratorMock = NewFriendsIteratorMocks(s.friendsMocks)
 	s.friendsCollection = NewFriendsCollection(s.friendsMocks)
@@ -36,7 +33,6 @@ func TestFriendsCollectionInit(t *testing.T) {
 }
 
 func (s *FriendsCollectionSuite) TestCreateIterator() {
-	// return NewFriendsIterator(collection.Friends)
 
 	// act
 	result := s.friendsCollection.CreateIterator()
