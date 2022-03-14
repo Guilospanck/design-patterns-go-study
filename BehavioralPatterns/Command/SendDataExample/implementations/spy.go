@@ -1,6 +1,10 @@
-package main
+package implementations
 
-import "github.com/stretchr/testify/mock"
+import (
+	"base/BehavioralPatterns/Command/SendDataExample/domain"
+
+	"github.com/stretchr/testify/mock"
+)
 
 type SendDataCommandSpy struct {
 	mock.Mock
@@ -19,7 +23,7 @@ type ReceiverSpy struct {
 	mock.Mock
 }
 
-func (spy *ReceiverSpy) ReceiveData(data Data) {
+func (spy *ReceiverSpy) ReceiveData(data domain.Data) {
 	spy.Called(data)
 }
 

@@ -1,6 +1,7 @@
-package main
+package implementations
 
 import (
+	"base/BehavioralPatterns/Command/SendDataExample/domain"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -21,13 +22,13 @@ func Test_Receiver_ReceiveData(t *testing.T) {
 
 type receiverSut struct {
 	usecase *Receiver
-	data    Data
+	data    domain.Data
 }
 
 func makeReceiverSut() receiverSut {
 	usecase := NewReceiver()
 
-	data := Data{
+	data := domain.Data{
 		Name:    "Guilherme",
 		Surname: "Any",
 		Age:     26,

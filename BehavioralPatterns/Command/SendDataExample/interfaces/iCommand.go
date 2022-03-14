@@ -1,4 +1,4 @@
-package main
+package interfaces
 
 type ICommand interface {
 	Execute()

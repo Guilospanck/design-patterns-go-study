@@ -1,6 +1,9 @@
-package main
+package implementations
 
-import "testing"
+import (
+	"base/BehavioralPatterns/Command/SendDataExample/domain"
+	"testing"
+)
 
 func Test_Execute(t *testing.T) {
 	t.Run("should execute mock correctly", func(t *testing.T) {
@@ -21,7 +24,7 @@ func Test_ReceiveData(t *testing.T) {
 		// arrange
 		sut := NewReceiverSpy()
 
-		data := Data{
+		data := domain.Data{
 			Name:    "Guilherme",
 			Surname: "Any",
 			Age:     26,

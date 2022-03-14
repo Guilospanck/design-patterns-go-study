@@ -1,6 +1,9 @@
-package main
+package implementations
 
-import "testing"
+import (
+	"base/BehavioralPatterns/Command/SendDataExample/domain"
+	"testing"
+)
 
 func Test_SendDataCommand_Execute(t *testing.T) {
 	t.Run("it should Execute method in SendDataCommand", func(t *testing.T) {
@@ -19,13 +22,13 @@ func Test_SendDataCommand_Execute(t *testing.T) {
 }
 
 type sendDataCommandSut struct {
-	data     Data
+	data     domain.Data
 	receiver *ReceiverSpy
 	usecase  *SendDataCommand
 }
 
 func makeSendDataCommandSut() sendDataCommandSut {
-	data := Data{
+	data := domain.Data{
 		Name:    "Guilherme",
 		Surname: "Any",
 		Age:     26,
