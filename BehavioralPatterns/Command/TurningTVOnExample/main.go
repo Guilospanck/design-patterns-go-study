@@ -4,7 +4,7 @@ import "base/BehavioralPatterns/Command/TurningTVOnExample/implementations"
 
 func main() {
 	// Create our receivers (devices)
-	tv := NewTV()
+	tv := implementations.NewTV()
 	radio := implementations.NewRadio()
 
 	// Create our commands

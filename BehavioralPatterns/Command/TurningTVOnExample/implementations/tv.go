@@ -1,4 +1,4 @@
-package main
+package implementations
 
 import "fmt"
 
@@ -7,12 +7,12 @@ type TV struct {
 	isRunning bool
 }
 
-func (tv *TV) On() {
+func (tv *TV) TurnOn() {
 	tv.isRunning = true
 	fmt.Println("TV is turning ON")
 }
 
-func (tv *TV) Off() {
+func (tv *TV) TurnOff() {
 	tv.isRunning = false
 	fmt.Println("TV is turning OFF")
 }
