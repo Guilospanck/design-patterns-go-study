@@ -7,7 +7,7 @@ type OffCommand struct {
 }
 
 func (command *OffCommand) Execute() {
-	command.device.Off()
+	command.device.TurnOff()
 }
 
 func NewOffCommand(device interfaces.IDevice) *OffCommand {

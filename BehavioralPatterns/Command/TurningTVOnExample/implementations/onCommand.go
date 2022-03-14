@@ -7,7 +7,7 @@ type OnCommand struct {
 }
 
 func (command *OnCommand) Execute() {
-	command.device.On()
+	command.device.TurnOn()
 }
 
 func NewOnCommand(device interfaces.IDevice) *OnCommand {

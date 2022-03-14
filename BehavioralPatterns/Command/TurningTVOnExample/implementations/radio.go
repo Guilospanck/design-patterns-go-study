@@ -7,12 +7,12 @@ type Radio struct {
 	isRunning bool
 }
 
-func (r *Radio) On() {
+func (r *Radio) TurnOn() {
 	r.isRunning = true
 	fmt.Println("Radio is turning on...")
 }
 
-func (r *Radio) Off() {
+func (r *Radio) TurnOff() {
 	r.isRunning = false
 	fmt.Println("Radio is turning off...")
 }
