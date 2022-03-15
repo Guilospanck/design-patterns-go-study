@@ -1,4 +1,4 @@
-package main
+package implementations
 
 import (
 	"fmt"
@@ -12,20 +12,16 @@ type single struct{}
 
 var singleInstance *single
 
-func getInstance() *single {
-
+func GetInstance() *single {
 	if singleInstance == nil {
-
 		once.Do(
 			func() {
 				fmt.Println("Creating single instance...")
 				singleInstance = &single{}
 			})
-
 	} else {
 		fmt.Println("Instance already created!")
 	}
 
 	return singleInstance
-
 }

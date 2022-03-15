@@ -1,4 +1,4 @@
-package main
+package implementations
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ type single struct{}
 
 var singleInstance *single
 
-func getInstance() *single {
+func GetInstance() *single {
 	if singleInstance == nil {
 		lock.Lock()
 		defer lock.Unlock()

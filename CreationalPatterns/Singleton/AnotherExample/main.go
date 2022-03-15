@@ -1,11 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"base/CreationalPatterns/Singleton/AnotherExample/implementations"
+	"fmt"
+)
 
 func main() {
 
 	for i := 0; i < 30; i++ {
-		go getInstance()
+		go implementations.GetInstance()
 	}
 
 	fmt.Scanln()
