@@ -1,9 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"base/CreationalPatterns/Builder/object_chaining/implementations"
+	"fmt"
+)
 
 func main() {
-	personBuilder := NewPersonBuilder()
+	personBuilder := implementations.NewPersonBuilder()
 
 	// first person
 	personBuilder.
