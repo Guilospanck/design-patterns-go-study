@@ -1,64 +1,66 @@
-package main
+package implementations
+
+import "base/CreationalPatterns/Builder/another_example/domain"
 
 type SensorsBuilder struct {
-	obj        SensorOpts
+	obj        domain.SensorOpts
 	sensorType string
 }
 
-func (sb *SensorsBuilder) reset() {
-	sb.obj = SensorOpts{}
+func (sb *SensorsBuilder) Reset() {
+	sb.obj = domain.SensorOpts{}
 }
 
-func (sb *SensorsBuilder) setThreshold(threshold int) {
+func (sb *SensorsBuilder) SetThreshold(threshold int) {
 	sb.obj.Threshold = threshold
 }
 
-func (sb *SensorsBuilder) setHigher(higher bool) {
+func (sb *SensorsBuilder) SetHigher(higher bool) {
 	sb.obj.Higher = higher
 }
 
-func (sb *SensorsBuilder) setLower(lower bool) {
+func (sb *SensorsBuilder) SetLower(lower bool) {
 	sb.obj.Lower = lower
 }
 
-func (sb *SensorsBuilder) setTSample(tsample uint) {
+func (sb *SensorsBuilder) SetTSample(tsample uint) {
 	sb.obj.TSample = tsample
 }
 
-func (sb *SensorsBuilder) setBorder(border bool) {
+func (sb *SensorsBuilder) SetBorder(border bool) {
 	sb.obj.Border = border
 }
 
-func (sb *SensorsBuilder) setRisingEdge(rising bool) {
+func (sb *SensorsBuilder) SetRisingEdge(rising bool) {
 	sb.obj.RisingEdge = rising
 }
 
-func (sb *SensorsBuilder) setFallingEdge(falling bool) {
+func (sb *SensorsBuilder) SetFallingEdge(falling bool) {
 	sb.obj.FallingEdge = falling
 }
 
-func (sb *SensorsBuilder) setBetween(between bool) {
+func (sb *SensorsBuilder) SetBetween(between bool) {
 	sb.obj.Between = between
 }
 
-func (sb *SensorsBuilder) setFirstThreshold(threshold int) {
+func (sb *SensorsBuilder) SetFirstThreshold(threshold int) {
 	sb.obj.FirstThreshold = threshold
 }
 
-func (sb *SensorsBuilder) setSecondThreshold(threshold int) {
+func (sb *SensorsBuilder) SetSecondThreshold(threshold int) {
 	sb.obj.SecondThreshold = threshold
 }
 
-func (sb *SensorsBuilder) setType(whatType uint) {
+func (sb *SensorsBuilder) SetType(whatType uint) {
 	sb.obj.Type = whatType
 }
 
-func (sb *SensorsBuilder) setSocialContact(socialContact string) {
+func (sb *SensorsBuilder) SetSocialContact(socialContact string) {
 	sb.obj.SocialContact = socialContact
 }
 
-func (sb *SensorsBuilder) getSensor() Sensor {
-	sensorOpts := &SensorOpts{
+func (sb *SensorsBuilder) GetSensor() domain.Sensor {
+	sensorOpts := &domain.SensorOpts{
 		Threshold:       sb.obj.Threshold,
 		Higher:          sb.obj.Higher,
 		Lower:           sb.obj.Lower,
@@ -73,16 +75,16 @@ func (sb *SensorsBuilder) getSensor() Sensor {
 		SocialContact:   sb.obj.SocialContact,
 	}
 
-	sb.reset()
+	sb.Reset()
 
-	return Sensor{
+	return domain.Sensor{
 		sb.sensorType: sensorOpts,
 	}
 }
 
 func NewSensorsBuilder(sensorType string) *SensorsBuilder {
 	return &SensorsBuilder{
-		obj:        SensorOpts{},
+		obj:        domain.SensorOpts{},
 		sensorType: sensorType,
 	}
 }

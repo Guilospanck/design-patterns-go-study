@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"base/CreationalPatterns/Builder/another_example/domain"
+	"base/CreationalPatterns/Builder/another_example/implementations"
+	"fmt"
+)
 
 func main() {
-	opts := SensorOpts{
+	opts := domain.SensorOpts{
 		Threshold:       10,
 		Higher:          true,
 		Lower:           false,
@@ -18,35 +22,35 @@ func main() {
 		SocialContact:   "test@test.com",
 	}
 
-	tempSensorBuilder := NewSensorsBuilder("temp")
-	rmmsSensorBuilder := NewSensorsBuilder("rmms")
-	rms2SensorBuilder := NewSensorsBuilder("rms2")
-	tiltSensorBuilder := NewSensorsBuilder("tilt")
-	fftSensorBuilder := NewSensorsBuilder("fft")
-	accrawSensorBuilder := NewSensorsBuilder("accraw")
-	ntcSensorBuilder := NewSensorsBuilder("ntc")
+	tempSensorBuilder := implementations.NewSensorsBuilder("temp")
+	rmmsSensorBuilder := implementations.NewSensorsBuilder("rmms")
+	rms2SensorBuilder := implementations.NewSensorsBuilder("rms2")
+	tiltSensorBuilder := implementations.NewSensorsBuilder("tilt")
+	fftSensorBuilder := implementations.NewSensorsBuilder("fft")
+	accrawSensorBuilder := implementations.NewSensorsBuilder("accraw")
+	ntcSensorBuilder := implementations.NewSensorsBuilder("ntc")
 
-	director := NewDirector(tempSensorBuilder)
+	director := implementations.NewDirector(tempSensorBuilder)
 
-	tempSensor := director.createSensor(opts)
+	tempSensor := director.CreateSensor(opts)
 
-	director.setBuilder(rmmsSensorBuilder)
-	rmmsSensor := director.createSensor(opts)
+	director.SetBuilder(rmmsSensorBuilder)
+	rmmsSensor := director.CreateSensor(opts)
 
-	director.setBuilder(rms2SensorBuilder)
-	rms2Sensor := director.createSensor(opts)
+	director.SetBuilder(rms2SensorBuilder)
+	rms2Sensor := director.CreateSensor(opts)
 
-	director.setBuilder(tiltSensorBuilder)
-	tiltSensor := director.createSensor(opts)
+	director.SetBuilder(tiltSensorBuilder)
+	tiltSensor := director.CreateSensor(opts)
 
-	director.setBuilder(fftSensorBuilder)
-	fftSensor := director.createSensor(opts)
+	director.SetBuilder(fftSensorBuilder)
+	fftSensor := director.CreateSensor(opts)
 
-	director.setBuilder(accrawSensorBuilder)
-	accrawSensor := director.createSensor(opts)
+	director.SetBuilder(accrawSensorBuilder)
+	accrawSensor := director.CreateSensor(opts)
 
-	director.setBuilder(ntcSensorBuilder)
-	ntcSensor := director.createSensor(opts)
+	director.SetBuilder(ntcSensorBuilder)
+	ntcSensor := director.CreateSensor(opts)
 
 	for key, value := range tempSensor {
 		fmt.Printf("%s: %+v\n===========================\n", key, value)

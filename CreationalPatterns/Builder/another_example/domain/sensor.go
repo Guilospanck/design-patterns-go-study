@@ -1,4 +1,4 @@
-package main
+package domain
 
 type SensorOpts struct {
 	Threshold       int
