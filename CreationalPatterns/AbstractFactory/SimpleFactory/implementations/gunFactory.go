@@ -1,15 +1,18 @@
-package main
+package implementations
 
-import "fmt"
+import (
+	"base/CreationalPatterns/AbstractFactory/SimpleFactory/interfaces"
+	"fmt"
+)
 
 // Look how we didn't have to have a "IGunFactory" interface
 // because we're dealing with only different products, not different brands.
-func newGunFactory(gunType string) (iGun, error) {
+func NewGunFactory(gunType string) (interfaces.IGun, error) {
 	switch gunType {
 	case "ak47":
-		return newAK47(), nil
+		return NewAK47(), nil
 	case "musket":
-		return newMusket(), nil
+		return NewMusket(), nil
 	default:
 		return nil, fmt.Errorf("gun type is not known")
 	}

@@ -1,6 +1,6 @@
-package main
+package implementations
 
 // Concrete product
 type adidasShirt struct {
-	shirt
+	Shirt
 }
