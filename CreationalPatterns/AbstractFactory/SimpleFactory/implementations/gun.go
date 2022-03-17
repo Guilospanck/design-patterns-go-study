@@ -20,3 +20,7 @@ func (g *Gun) GetPower() int {
 func (g *Gun) SetPower(power int) {
 	g.power = power
 }
+
+func NewGun() *Gun {
+	return &Gun{}
+}

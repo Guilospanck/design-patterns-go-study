@@ -1,0 +1,2823 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>implementations: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">base/BehavioralPatterns/Command/SendDataExample/implementations/receiver.go (100.0%)</option>
+				
+				<option value="file1">base/BehavioralPatterns/Command/SendDataExample/implementations/sendDataCommand.go (100.0%)</option>
+				
+				<option value="file2">base/BehavioralPatterns/Command/SendDataExample/implementations/sender.go (100.0%)</option>
+				
+				<option value="file3">base/BehavioralPatterns/Command/SendDataExample/implementations/spy.go (100.0%)</option>
+				
+				<option value="file4">base/BehavioralPatterns/Command/TurningTVOnExample/implementations/button.go (100.0%)</option>
+				
+				<option value="file5">base/BehavioralPatterns/Command/TurningTVOnExample/implementations/offCommand.go (100.0%)</option>
+				
+				<option value="file6">base/BehavioralPatterns/Command/TurningTVOnExample/implementations/onCommand.go (100.0%)</option>
+				
+				<option value="file7">base/BehavioralPatterns/Command/TurningTVOnExample/implementations/radio.go (100.0%)</option>
+				
+				<option value="file8">base/BehavioralPatterns/Command/TurningTVOnExample/implementations/spy.go (100.0%)</option>
+				
+				<option value="file9">base/BehavioralPatterns/Command/TurningTVOnExample/implementations/tv.go (100.0%)</option>
+				
+				<option value="file10">base/BehavioralPatterns/Iterator/implementations/friendsCollection.go (100.0%)</option>
+				
+				<option value="file11">base/BehavioralPatterns/Iterator/implementations/friendsIterator.go (88.9%)</option>
+				
+				<option value="file12">base/BehavioralPatterns/Iterator/implementations/userCollection.go (100.0%)</option>
+				
+				<option value="file13">base/BehavioralPatterns/Iterator/implementations/userIterator.go (87.5%)</option>
+				
+				<option value="file14">base/BehavioralPatterns/Mediator/StationManagerExample/implementations/freightTrain.go (77.8%)</option>
+				
+				<option value="file15">base/BehavioralPatterns/Mediator/StationManagerExample/implementations/implementationsSuite.go (100.0%)</option>
+				
+				<option value="file16">base/BehavioralPatterns/Mediator/StationManagerExample/implementations/passengerTrain.go (77.8%)</option>
+				
+				<option value="file17">base/BehavioralPatterns/Mediator/StationManagerExample/implementations/stationManager.go (100.0%)</option>
+				
+				<option value="file18">base/BehavioralPatterns/Observer/WithTopics/main.go (0.0%)</option>
+				
+				<option value="file19">base/BehavioralPatterns/Observer/WithTopics/publisher.go (91.7%)</option>
+				
+				<option value="file20">base/BehavioralPatterns/Observer/WithTopics/subscriber.go (100.0%)</option>
+				
+				<option value="file21">base/BehavioralPatterns/Observer/customerSubscriber.go (100.0%)</option>
+				
+				<option value="file22">base/BehavioralPatterns/Observer/data.go (100.0%)</option>
+				
+				<option value="file23">base/BehavioralPatterns/Observer/main.go (0.0%)</option>
+				
+				<option value="file24">base/BehavioralPatterns/Observer/publisher.go (100.0%)</option>
+				
+				<option value="file25">base/BehavioralPatterns/State/iState.go (100.0%)</option>
+				
+				<option value="file26">base/BehavioralPatterns/State/lockedState.go (85.7%)</option>
+				
+				<option value="file27">base/BehavioralPatterns/State/lockedState_mocks.go (14.3%)</option>
+				
+				<option value="file28">base/BehavioralPatterns/State/main.go (0.0%)</option>
+				
+				<option value="file29">base/BehavioralPatterns/State/playerContext.go (0.0%)</option>
+				
+				<option value="file30">base/BehavioralPatterns/State/playerContext_mocks.go (73.7%)</option>
+				
+				<option value="file31">base/BehavioralPatterns/State/playingState.go (100.0%)</option>
+				
+				<option value="file32">base/BehavioralPatterns/State/playingState_mocks.go (12.5%)</option>
+				
+				<option value="file33">base/BehavioralPatterns/State/readyState.go (100.0%)</option>
+				
+				<option value="file34">base/BehavioralPatterns/State/readyState_mocks.go (16.7%)</option>
+				
+				<option value="file35">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/cache.go (100.0%)</option>
+				
+				<option value="file36">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/cache_mocks.go (7.7%)</option>
+				
+				<option value="file37">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/fifoStrategy.go (0.0%)</option>
+				
+				<option value="file38">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/fifoStrategy_mocks.go (100.0%)</option>
+				
+				<option value="file39">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/lfuStrategy.go (0.0%)</option>
+				
+				<option value="file40">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/lfuStrategy_mocks.go (50.0%)</option>
+				
+				<option value="file41">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/lruStrategy.go (0.0%)</option>
+				
+				<option value="file42">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/lruStrategy_mocks.go (0.0%)</option>
+				
+				<option value="file43">base/BehavioralPatterns/Strategy/In_Memory_Cache_Example/main.go (0.0%)</option>
+				
+				<option value="file44">base/BehavioralPatterns/Strategy/concreteStrategyAdd.go (0.0%)</option>
+				
+				<option value="file45">base/BehavioralPatterns/Strategy/concreteStrategyAdd_mocks.go (100.0%)</option>
+				
+				<option value="file46">base/BehavioralPatterns/Strategy/concreteStrategyMultiply.go (0.0%)</option>
+				
+				<option value="file47">base/BehavioralPatterns/Strategy/concreteStrategyMultiply_mocks.go (100.0%)</option>
+				
+				<option value="file48">base/BehavioralPatterns/Strategy/concreteStrategySubtract.go (0.0%)</option>
+				
+				<option value="file49">base/BehavioralPatterns/Strategy/concreteStrategySubtract_mocks.go (100.0%)</option>
+				
+				<option value="file50">base/BehavioralPatterns/Strategy/context.go (100.0%)</option>
+				
+				<option value="file51">base/BehavioralPatterns/Strategy/context_mocks.go (33.3%)</option>
+				
+				<option value="file52">base/BehavioralPatterns/Strategy/main.go (0.0%)</option>
+				
+				<option value="file53">base/BehavioralPatterns/TemplateMethod/emailOTP.go (87.5%)</option>
+				
+				<option value="file54">base/BehavioralPatterns/TemplateMethod/emailOTP_mocks.go (100.0%)</option>
+				
+				<option value="file55">base/BehavioralPatterns/TemplateMethod/main.go (0.0%)</option>
+				
+				<option value="file56">base/BehavioralPatterns/TemplateMethod/otp.go (80.0%)</option>
+				
+				<option value="file57">base/BehavioralPatterns/TemplateMethod/otp_mocks.go (50.0%)</option>
+				
+				<option value="file58">base/BehavioralPatterns/TemplateMethod/smsOTP.go (87.5%)</option>
+				
+				<option value="file59">base/BehavioralPatterns/TemplateMethod/smsOTP_mocks.go (57.1%)</option>
+				
+				<option value="file60">base/BehavioralPatterns/Visitor/files/circle.go (80.0%)</option>
+				
+				<option value="file61">base/BehavioralPatterns/Visitor/files/circle_mocks.go (100.0%)</option>
+				
+				<option value="file62">base/BehavioralPatterns/Visitor/files/dot.go (80.0%)</option>
+				
+				<option value="file63">base/BehavioralPatterns/Visitor/files/dot_mocks.go (100.0%)</option>
+				
+				<option value="file64">base/BehavioralPatterns/Visitor/files/exportXMLVisitor.go (0.0%)</option>
+				
+				<option value="file65">base/BehavioralPatterns/Visitor/files/rectangle.go (80.0%)</option>
+				
+				<option value="file66">base/BehavioralPatterns/Visitor/files/rectangle_mocks.go (100.0%)</option>
+				
+				<option value="file67">base/BehavioralPatterns/Visitor/files/visitor_mocks.go (100.0%)</option>
+				
+				<option value="file68">base/CreationalPatterns/AbstractFactory/SimpleFactory/implementations/ak_47.go (100.0%)</option>
+				
+				<option value="file69">base/CreationalPatterns/AbstractFactory/SimpleFactory/implementations/gun.go (100.0%)</option>
+				
+				<option value="file70">base/CreationalPatterns/AbstractFactory/SimpleFactory/implementations/gunFactory.go (0.0%)</option>
+				
+				<option value="file71">base/CreationalPatterns/AbstractFactory/SimpleFactory/implementations/musket.go (100.0%)</option>
+				
+				<option value="file72">base/CreationalPatterns/Builder/another_example/implementations/director.go (12.5%)</option>
+				
+				<option value="file73">base/CreationalPatterns/Builder/another_example/implementations/sensorBuilder.go (100.0%)</option>
+				
+				<option value="file74">base/CreationalPatterns/Builder/conceptual_example/implementations/builder.go (75.0%)</option>
+				
+				<option value="file75">base/CreationalPatterns/Builder/conceptual_example/implementations/director.go (100.0%)</option>
+				
+				<option value="file76">base/CreationalPatterns/Builder/conceptual_example/implementations/iglooBuilder.go (100.0%)</option>
+				
+				<option value="file77">base/CreationalPatterns/Builder/conceptual_example/implementations/normalBuilder.go (100.0%)</option>
+				
+				<option value="file78">base/CreationalPatterns/Builder/object_chaining/implementations/personBuilder.go (100.0%)</option>
+				
+				<option value="file79">base/CreationalPatterns/Singleton/AnotherExample/implementations/single.go (100.0%)</option>
+				
+				<option value="file80">base/CreationalPatterns/Singleton/ConceptualExample/implementations/single.go (88.9%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">no coverage</span>
+				<span class="cov1">low coverage</span>
+				<span class="cov2">*</span>
+				<span class="cov3">*</span>
+				<span class="cov4">*</span>
+				<span class="cov5">*</span>
+				<span class="cov6">*</span>
+				<span class="cov7">*</span>
+				<span class="cov8">*</span>
+				<span class="cov9">*</span>
+				<span class="cov10">high coverage</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package implementations
+
+import (
+        "base/BehavioralPatterns/Command/SendDataExample/domain"
+        "fmt"
+)
+
+type Receiver struct{}
+
+func (r *Receiver) ReceiveData(data domain.Data) <span class="cov8" title="1">{
+        fmt.Printf("Received: %+v\n", data)
+}</span>
+
+func NewReceiver() *Receiver <span class="cov8" title="1">{
+        return &amp;Receiver{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package implementations
+
+import (
+        "base/BehavioralPatterns/Command/SendDataExample/domain"
+        "base/BehavioralPatterns/Command/SendDataExample/interfaces"
+        "fmt"
+)
+
+type SendDataCommand struct {
+        data     domain.Data
+        receiver interfaces.IReceiver
+}
+
+func (command *SendDataCommand) Execute() <span class="cov8" title="1">{
+        fmt.Printf("Command sending data to receiver...\n")
+        command.receiver.ReceiveData(command.data)
+}</span>
+
+func NewSendDataCommand(data domain.Data, receiver interfaces.IReceiver) *SendDataCommand <span class="cov8" title="1">{
+        return &amp;SendDataCommand{
+                data:     data,
+                receiver: receiver,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package implementations
+
+import (
+        "base/BehavioralPatterns/Command/SendDataExample/interfaces"
+        "fmt"
+)
+
+type Sender struct {
+        sendDataCommand interfaces.ICommand
+}
+
+func (s *Sender) SendData() <span class="cov8" title="1">{
+        fmt.Printf("Sender sending data...\n")
+        s.sendDataCommand.Execute()
+}</span>
+
+func NewSender(sendDataCommand interfaces.ICommand) *Sender <span class="cov8" title="1">{
+        return &amp;Sender{
+                sendDataCommand: sendDataCommand,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package implementations
+
+import (
+        "base/BehavioralPatterns/Command/SendDataExample/domain"
+
+        "github.com/stretchr/testify/mock"
+)
+
+type SendDataCommandSpy struct {
+        mock.Mock
+}
+
+func (spy *SendDataCommandSpy) Execute() <span class="cov10" title="2">{
+        spy.Called()
+}</span>
+
+func NewSendDataCommandSpy() *SendDataCommandSpy <span class="cov10" title="2">{
+        return new(SendDataCommandSpy)
+}</span>
+
+//
+type ReceiverSpy struct {
+        mock.Mock
+}
+
+func (spy *ReceiverSpy) ReceiveData(data domain.Data) <span class="cov10" title="2">{
+        spy.Called(data)
+}</span>
+
+func NewReceiverSpy() *ReceiverSpy <span class="cov10" title="2">{
+        return new(ReceiverSpy)
+}</span>
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package implementations
+
+import "base/BehavioralPatterns/Command/TurningTVOnExample/interfaces"
+
+// Invoker (Sender)
+type Button struct {
+        command interfaces.ICommand
+}
+
+func (b *Button) Press() <span class="cov8" title="1">{
+        b.command.Execute()
+}</span>
+
+func NewButton(command interfaces.ICommand) *Button <span class="cov8" title="1">{
+        return &amp;Button{
+                command: command,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package implementations
+
+import "base/BehavioralPatterns/Command/TurningTVOnExample/interfaces"
+
+type OffCommand struct {
+        device interfaces.IDevice
+}
+
+func (command *OffCommand) Execute() <span class="cov8" title="1">{
+        command.device.TurnOff()
+}</span>
+
+func NewOffCommand(device interfaces.IDevice) *OffCommand <span class="cov8" title="1">{
+        return &amp;OffCommand{
+                device: device,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file6" style="display: none">package implementations
+
+import "base/BehavioralPatterns/Command/TurningTVOnExample/interfaces"
+
+type OnCommand struct {
+        device interfaces.IDevice
+}
+
+func (command *OnCommand) Execute() <span class="cov8" title="1">{
+        command.device.TurnOn()
+}</span>
+
+func NewOnCommand(device interfaces.IDevice) *OnCommand <span class="cov8" title="1">{
+        return &amp;OnCommand{
+                device: device,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file7" style="display: none">package implementations
+
+import "fmt"
+
+// Another concrete receiver
+type Radio struct {
+        isRunning bool
+}
+
+func (r *Radio) TurnOn() <span class="cov1" title="1">{
+        r.isRunning = true
+        fmt.Println("Radio is turning on...")
+}</span>
+
+func (r *Radio) TurnOff() <span class="cov1" title="1">{
+        r.isRunning = false
+        fmt.Println("Radio is turning off...")
+}</span>
+
+func NewRadio() *Radio <span class="cov10" title="2">{
+        return &amp;Radio{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file8" style="display: none">package implementations
+
+import "github.com/stretchr/testify/mock"
+
+type CommandSpy struct {
+        mock.Mock
+}
+
+func (spy *CommandSpy) Execute() <span class="cov5" title="2">{
+        spy.Called()
+}</span>
+
+func NewCommandSpy() *CommandSpy <span class="cov5" title="2">{
+        return new(CommandSpy)
+}</span>
+
+//
+type DeviceSpy struct {
+        mock.Mock
+}
+
+func (spy *DeviceSpy) TurnOn() <span class="cov5" title="2">{
+        spy.Called()
+}</span>
+
+func (spy *DeviceSpy) TurnOff() <span class="cov5" title="2">{
+        spy.Called()
+}</span>
+
+func NewDeviceSpy() *DeviceSpy <span class="cov10" title="4">{
+        return new(DeviceSpy)
+}</span>
+</pre>
+		
+		<pre class="file" id="file9" style="display: none">package implementations
+
+import "fmt"
+
+// Concrete receiver
+type TV struct {
+        isRunning bool
+}
+
+func (tv *TV) TurnOn() <span class="cov1" title="1">{
+        tv.isRunning = true
+        fmt.Println("TV is turning ON")
+}</span>
+
+func (tv *TV) TurnOff() <span class="cov1" title="1">{
+        tv.isRunning = false
+        fmt.Println("TV is turning OFF")
+}</span>
+
+func NewTV() *TV <span class="cov10" title="2">{
+        return &amp;TV{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file10" style="display: none">package implementations
+
+import "base/BehavioralPatterns/Iterator/interfaces"
+
+type Friend struct {
+        Name, Neighborhood, City string
+        Age                      int
+}
+
+func NewFriend(name, neighborhood, city string, age int) *Friend <span class="cov10" title="4">{
+        return &amp;Friend{
+                Name:         name,
+                Neighborhood: neighborhood,
+                City:         city,
+                Age:          age,
+        }
+}</span>
+
+type FriendsCollection struct {
+        Friends []*Friend
+}
+
+func (collection *FriendsCollection) CreateIterator() interfaces.IIterator <span class="cov1" title="1">{
+        return NewFriendsIterator(collection.Friends)
+}</span>
+
+func (collection *FriendsCollection) AddFriend(friend Friend) <span class="cov1" title="1">{
+        collection.Friends = append(collection.Friends, &amp;friend)
+}</span>
+
+func NewFriendsCollection(friends []*Friend) *FriendsCollection <span class="cov8" title="3">{
+        return &amp;FriendsCollection{
+                Friends: friends,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file11" style="display: none">package implementations
+
+import "encoding/json"
+
+type FriendsIterator struct {
+        index   int
+        Friends []*Friend
+}
+
+func (iterator *FriendsIterator) HasNext() bool <span class="cov5" title="2">{
+        return iterator.index &lt; len(iterator.Friends)
+}</span>
+
+func (iterator *FriendsIterator) GetNext() string <span class="cov1" title="1">{
+        if iterator.HasNext() </span><span class="cov1" title="1">{
+                friend := iterator.Friends[iterator.index]
+                iterator.index++
+
+                friendByte, _ := json.Marshal(friend)
+                friendStr := string(friendByte[:])
+
+                return friendStr
+        }</span>
+
+        <span class="cov0" title="0">return ""</span>
+}
+
+func NewFriendsIterator(friends []*Friend) *FriendsIterator <span class="cov10" title="4">{
+        return &amp;FriendsIterator{
+                Friends: friends,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file12" style="display: none">package implementations
+
+import "base/BehavioralPatterns/Iterator/interfaces"
+
+// Concrete Collection
+type UserCollection struct {
+        users []*User
+}
+
+func (u *UserCollection) CreateIterator() interfaces.IIterator <span class="cov1" title="1">{
+        return &amp;UserIterator{
+                users: u.users,
+        }
+}</span>
+
+func NewUserCollection(users []*User) *UserCollection <span class="cov10" title="2">{
+        return &amp;UserCollection{
+                users: users,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file13" style="display: none">package implementations
+
+import (
+        "encoding/json"
+)
+
+// Concrete Iterator
+type UserIterator struct {
+        index int
+        users []*User
+}
+
+func (u *UserIterator) HasNext() bool <span class="cov10" title="2">{
+        return u.index &lt; len(u.users)
+}</span>
+
+func (u *UserIterator) GetNext() string <span class="cov1" title="1">{
+        if u.HasNext() </span><span class="cov1" title="1">{
+                user := u.users[u.index]
+                u.index++
+                userBytes, _ := json.Marshal(user)
+                userStr := string(userBytes[:])
+
+                return userStr
+        }</span>
+        <span class="cov0" title="0">return ""</span>
+}
+</pre>
+		
+		<pre class="file" id="file14" style="display: none">package implementations
+
+import (
+        "base/BehavioralPatterns/Mediator/StationManagerExample/interfaces"
+        "fmt"
+)
+
+// concrete component
+type FreightTrain struct {
+        Mediator interfaces.IMediator
+}
+
+func (freightTrain *FreightTrain) Arrive() <span class="cov10" title="2">{
+        if !freightTrain.Mediator.CanArrive(freightTrain) </span><span class="cov0" title="0">{
+                fmt.Println("[FREIGHT TRAIN]: Arrival blocked. Waiting.")
+                return
+        }</span>
+        <span class="cov10" title="2">fmt.Println("[FREIGHT TRAIN]: Arrived.")</span>
+}
+
+func (freightTrain *FreightTrain) Depart() <span class="cov1" title="1">{
+        fmt.Println("[FREIGHT TRAIN]: Leaving...")
+        freightTrain.Mediator.NotifyAboutDeparture()
+}</span>
+
+func (freightTrain *FreightTrain) PermitArrival() <span class="cov1" title="1">{
+        fmt.Println("[FREIGHT TRAIN]: Arrival permitted. Arriving...")
+        freightTrain.Arrive()
+}</span>
+
+func NewFreightTrain(mediator interfaces.IMediator) *FreightTrain <span class="cov1" title="1">{
+        return &amp;FreightTrain{
+                Mediator: mediator,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file15" style="display: none">package implementations
+
+import (
+        "base/BehavioralPatterns/Mediator/StationManagerExample/interfaces"
+        "base/BehavioralPatterns/Mediator/StationManagerExample/mocks"
+
+        "github.com/stretchr/testify/require"
+        "github.com/stretchr/testify/suite"
+)
+
+type FreightTrainTestSuite struct {
+        suite.Suite
+
+        train    *FreightTrain
+        mediator interfaces.IMediator
+}
+
+func (s *FreightTrainTestSuite) SetupSuite() <span class="cov1" title="1">{
+        s.mediator = mocks.NewStationManagerMock()
+        s.train = NewFreightTrain(s.mediator)
+}</span>
+
+func (s *FreightTrainTestSuite) AfterTest(_, _ string) <span class="cov10" title="3">{
+        require.NoError(s.T(), nil)
+}</span>
+
+type PassengerTrainTestSuite struct {
+        suite.Suite
+
+        train    *PassengerTrain
+        mediator interfaces.IMediator
+}
+
+func (s *PassengerTrainTestSuite) SetupSuite() <span class="cov1" title="1">{
+        s.mediator = mocks.NewStationManagerMock()
+        s.train = NewPassengerTrain(s.mediator)
+}</span>
+
+func (s *PassengerTrainTestSuite) AfterTest(_, _ string) <span class="cov10" title="3">{
+        require.NoError(s.T(), nil)
+}</span>
+
+type StationManagerTestSuite struct {
+        suite.Suite
+
+        station        *StationManager
+        freightTrain   interfaces.ITrain
+        passengerTrain interfaces.ITrain
+}
+
+func (s *StationManagerTestSuite) SetupSuite() <span class="cov10" title="3">{
+        s.station = NewStationManager()
+        s.freightTrain = mocks.NewFreightTrainMocks(s.station)
+        s.passengerTrain = mocks.NewPassengerTrainMocks(s.station)
+}</span>
+
+func (s *StationManagerTestSuite) AfterTest(_, _ string) <span class="cov6" title="2">{
+        s.SetupSuite()
+        require.NoError(s.T(), nil)
+}</span>
+</pre>
+		
+		<pre class="file" id="file16" style="display: none">package implementations
+
+import (
+        "base/BehavioralPatterns/Mediator/StationManagerExample/interfaces"
+        "fmt"
+)
+
+// Concrete component
+type PassengerTrain struct {
+        Mediator interfaces.IMediator
+}
+
+func (passengerTrain *PassengerTrain) Arrive() <span class="cov10" title="2">{
+        if !passengerTrain.Mediator.CanArrive(passengerTrain) </span><span class="cov0" title="0">{
+                fmt.Println("[PASSENGER TRAIN]: Arrival blocked. Waiting.")
+                return
+        }</span>
+        <span class="cov10" title="2">fmt.Println("[PASSENGER TRAIN]: Arrived.")</span>
+}
+
+func (passengerTrain *PassengerTrain) Depart() <span class="cov1" title="1">{
+        fmt.Println("[PASSENGER TRAIN]: Leaving...")
+        passengerTrain.Mediator.NotifyAboutDeparture()
+}</span>
+
+func (passengerTrain *PassengerTrain) PermitArrival() <span class="cov1" title="1">{
+        fmt.Println("[PASSENGER TRAIN]: Arrival permitted. Arriving...")
+        passengerTrain.Arrive()
+}</span>
+
+func NewPassengerTrain(mediator interfaces.IMediator) *PassengerTrain <span class="cov1" title="1">{
+        return &amp;PassengerTrain{
+                Mediator: mediator,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file17" style="display: none">package implementations
+
+import "base/BehavioralPatterns/Mediator/StationManagerExample/interfaces"
+
+// Concrete mediator
+type StationManager struct {
+        IsPlatformFree bool
+        TrainQueue     []interfaces.ITrain
+}
+
+func (stationManager *StationManager) CanArrive(train interfaces.ITrain) bool <span class="cov10" title="3">{
+        if stationManager.IsPlatformFree </span><span class="cov1" title="1">{
+                stationManager.IsPlatformFree = false
+                return true
+        }</span>
+        <span class="cov6" title="2">stationManager.TrainQueue = append(stationManager.TrainQueue, train)
+        return false</span>
+}
+
+func (stationManager *StationManager) NotifyAboutDeparture() <span class="cov6" title="2">{
+        stationManager.IsPlatformFree = true
+
+        if len(stationManager.TrainQueue) &gt; 0 </span><span class="cov1" title="1">{
+                stationManager.TrainQueue = stationManager.TrainQueue[1:]
+
+                if len(stationManager.TrainQueue) &gt; 0 </span><span class="cov1" title="1">{
+                        firstTrainInQueue := stationManager.TrainQueue[0]
+                        firstTrainInQueue.PermitArrival()
+                }</span>
+        }
+}
+
+func NewStationManager() *StationManager <span class="cov10" title="3">{
+        return &amp;StationManager{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file18" style="display: none">package main
+
+import (
+        "fmt"
+        "log"
+)
+
+func main() <span class="cov0" title="0">{
+        // publisher (subject)
+        publisher := NewPublisher()
+
+        // observers (subscribers)
+        subscriber1 := NewSubscriber()
+        subscriber2 := NewSubscriber()
+        subscriber3 := NewSubscriber()
+
+        // register subscribers to publisher
+        topic1 := "WSL/GUI/10"
+        topic2 := "WSL/LARRY/50"
+
+        log.Println("=============== [ADDING SUBSCRIBERS] ================")
+        publisher.AddSubscriber(topic1, subscriber1)
+        publisher.AddSubscriber(topic2, subscriber2)
+        publisher.AddSubscriber(topic1, subscriber3)
+        fmt.Println()
+
+        // notify just one subscriber
+        log.Println("=============== [NOTIFYING ONE SUBSCRIBER] ================")
+        publisher.Notify(topic1, subscriber1)
+        fmt.Println()
+
+        // notify all topics
+        log.Println("=============== [NOTIFYING ALL TOPICS] ================")
+        publisher.NotifyAll()
+        fmt.Println()
+
+        // notify just one topic
+        log.Printf("=============== [NOTIFYING TOPIC %s] ================\n", topic1)
+        publisher.NotifyAllFromTopic(topic1)
+        fmt.Println()
+
+        log.Printf("=============== [NOTIFYING TOPIC %s] ================\n", topic2)
+        publisher.NotifyAllFromTopic(topic2)
+        fmt.Println()
+
+        // changing state
+        publisher.UpdateState()
+        log.Println("=============== [NOTIFYING ALL TOPICS AFTER CHANGING STATE] ================")
+        publisher.NotifyAll()
+        fmt.Println()
+
+        // removing a subscriber
+        publisher.RemoveSubscriber(topic1, subscriber3)
+        log.Println("=============== [NOTIFYING ALL TOPICS AFTER REMOVING SUBSCRIBER] ================")
+        publisher.NotifyAll()
+        fmt.Println()
+
+        // removing a subscriber from a topic in which he's not in.
+        publisher.RemoveSubscriber(topic1, subscriber2)
+        log.Println("=============== [NOTIFYING ALL TOPICS AFTER REMOVING SUBSCRIBER NOT IN TOPIC] ================")
+        publisher.NotifyAll()
+        fmt.Println()
+
+}</span>
+</pre>
+		
+		<pre class="file" id="file19" style="display: none">package main
+
+import "log"
+
+type Publisher struct {
+        subscribers map[string][]ISubscriber
+        state       int
+}
+
+func (p *Publisher) AddSubscriber(topic string, subscriber ISubscriber) <span class="cov10" title="15">{
+        log.Printf("[PUBLISHER] Adding subscriber %s to topic %s.\n", subscriber.GetID(), topic)
+
+        if _, found := p.subscribers[topic]; found </span><span class="cov6" title="5">{
+                p.subscribers[topic] = append(p.subscribers[topic], subscriber)
+        }</span> else<span class="cov8" title="10"> {
+                subs := []ISubscriber{subscriber}
+                p.subscribers[topic] = subs
+        }</span>
+}
+
+func (p *Publisher) RemoveSubscriber(topic string, subscriber ISubscriber) <span class="cov4" title="3">{
+        log.Printf("[PUBLISHER] Removing subscriber %s from topic %s.\n", subscriber.GetID(), topic)
+
+        if _, found := p.subscribers[topic]; !found </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov4" title="3">subs := p.subscribers[topic]
+        p.subscribers[topic] = _removeSubscriberFromArray(subs, subscriber)</span>
+}
+
+func (p *Publisher) Notify(topic string, subscriber ISubscriber) <span class="cov4" title="3">{
+        log.Printf("[PUBLISHER] Notifying subscriber %s from topic %s.\n", subscriber.GetID(), topic)
+
+        if _, found := p.subscribers[topic]; !found </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov4" title="3">subs := p.subscribers[topic]
+        for _, sub := range subs </span><span class="cov5" title="4">{
+                if sub.GetID() == subscriber.GetID() </span><span class="cov4" title="3">{
+                        sub.Update(p)
+                        return
+                }</span>
+        }
+}
+
+func (p *Publisher) NotifyAllFromTopic(topic string) <span class="cov3" title="2">{
+        log.Printf("[PUBLISHER] Notifying all subscribers from topic %s.\n", topic)
+
+        if _, found := p.subscribers[topic]; !found </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov3" title="2">subs := p.subscribers[topic]
+        for _, sub := range subs </span><span class="cov4" title="3">{
+                sub.Update(p)
+        }</span>
+}
+
+func (p *Publisher) NotifyAll() <span class="cov1" title="1">{
+        log.Printf("[PUBLISHER] Notifying all subscribers from all topic.\n")
+
+        for _, subs := range p.subscribers </span><span class="cov3" title="2">{
+                for _, sub := range subs </span><span class="cov4" title="3">{
+                        sub.Update(p)
+                }</span>
+        }
+}
+
+func _removeSubscriberFromArray(subs []ISubscriber, subscriber ISubscriber) []ISubscriber <span class="cov4" title="3">{
+        subsLength := len(subs)
+
+        for index, sub := range subs </span><span class="cov4" title="3">{
+                if sub.GetID() == subscriber.GetID() </span><span class="cov3" title="2">{
+                        subs[index], subs[subsLength-1] = subs[subsLength-1], subs[index]
+                        return subs[:subsLength-1]
+                }</span>
+        }
+
+        <span class="cov1" title="1">return subs</span>
+}
+
+// some state change
+func (p *Publisher) UpdateState() <span class="cov4" title="3">{
+        p.state++
+}</span>
+
+func NewPublisher() *Publisher <span class="cov7" title="8">{
+        return &amp;Publisher{
+                subscribers: make(map[string][]ISubscriber),
+                state:       0,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file20" style="display: none">package main
+
+import (
+        "fmt"
+        "log"
+
+        "github.com/google/uuid"
+)
+
+type Subscriber struct {
+        id string
+}
+
+func (s *Subscriber) Update(data IPublisher) <span class="cov8" title="1">{
+        pub, ok := data.(*Publisher)
+        if ok </span><span class="cov8" title="1">{
+                log.Printf("[SUBSCRIBER %s] Data received: %s.\n", s.id, fmt.Sprintf("%d", pub.state))
+        }</span>
+}
+
+func (s *Subscriber) GetID() string <span class="cov8" title="1">{
+        return s.id
+}</span>
+
+func NewSubscriber(optionalId ...uuid.UUID) *Subscriber <span class="cov8" title="1">{
+        id := uuid.New()
+        if len(optionalId) &gt; 0 </span><span class="cov8" title="1">{
+                id = optionalId[0]
+        }</span>
+
+        <span class="cov8" title="1">return &amp;Subscriber{
+                id: id.String(),
+        }</span>
+}
+</pre>
+		
+		<pre class="file" id="file21" style="display: none">package main
+
+import "fmt"
+
+type CustomerSubscriber struct {
+        id string
+}
+
+func (sub *CustomerSubscriber) Update(data string) <span class="cov8" title="1">{
+        fmt.Printf("[Subscriber] Sending email to %s %s\n", sub.id, data)
+}</span>
+
+func (sub *CustomerSubscriber) GetID() string <span class="cov8" title="1">{
+        return sub.id
+}</span>
+
+func NewCustomerSubscriber(id string) *CustomerSubscriber <span class="cov8" title="1">{
+        return &amp;CustomerSubscriber{
+                id: id,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file22" style="display: none">package main
+
+import "fmt"
+
+type Data struct {
+        Name string `json:"name"`
+        Size int    `json:"size"`
+}
+
+func (d *Data) Marshal() string <span class="cov10" title="6">{
+        return d.Name + "&lt;&gt;" + fmt.Sprintf("%d", d.Size)
+}</span>
+</pre>
+		
+		<pre class="file" id="file23" style="display: none">package main
+
+func main() <span class="cov0" title="0">{
+        // Observers (Subscribers)
+        firstSubscriber := NewCustomerSubscriber("guilherme@mail.com")
+        secondSubscriber := NewCustomerSubscriber("larry@mail.com")
+
+        // creates data
+        newData := Data{
+                Name: "Product 1",
+                Size: 68,
+        }
+
+        // subject (Publisher) that is the "father" Of All others publishers
+        publisher := NewPublisher(newData.Marshal())
+
+        // Register subscribers (observers)
+        publisher.AddSubscriber(firstSubscriber)
+        publisher.AddSubscriber(secondSubscriber)
+
+        // Updating state
+        publisher.updateAvailabilityOfData()
+
+}</span>
+</pre>
+		
+		<pre class="file" id="file24" style="display: none">package main
+
+import "fmt"
+
+type Publisher struct {
+        data        string
+        subscribers []ISubscriber
+}
+
+/*
+ Concrete implementations of IPublisher
+*/
+func (p *Publisher) AddSubscriber(subscriber ISubscriber) <span class="cov10" title="9">{
+        p.subscribers = append(p.subscribers, subscriber)
+}</span>
+
+func (p *Publisher) RemoveSubscriber(subscriber ISubscriber) <span class="cov5" title="3">{
+        p.subscribers = _removeFromSlice(p.subscribers, subscriber)
+}</span>
+
+func (p *Publisher) NotifyAll() <span class="cov3" title="2">{
+        for _, subscriber := range p.subscribers </span><span class="cov6" title="4">{
+                subscriber.Update(p.data)
+        }</span>
+}
+
+func _removeFromSlice(subscribers []ISubscriber, subscriber ISubscriber) []ISubscriber <span class="cov5" title="3">{
+        length := len(subscribers)
+
+        for index, sub := range subscribers </span><span class="cov3" title="2">{
+                if sub.GetID() == subscriber.GetID() </span><span class="cov3" title="2">{
+                        subscribers[length-1], subscribers[index] = subscribers[index], subscribers[length-1]
+                        return subscribers[:length-1]
+                }</span>
+        }
+
+        <span class="cov1" title="1">return subscribers</span>
+}
+
+func (p *Publisher) updateAvailabilityOfData() <span class="cov1" title="1">{
+        fmt.Printf("[Publisher] Informing availability of data %+v...\n", p.data)
+        p.NotifyAll()
+}</span>
+
+func NewPublisher(data string) *Publisher <span class="cov7" title="5">{
+        return &amp;Publisher{
+                data: data,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file25" style="display: none">package main
+
+type IState interface {
+        ClickLock()
+        ClickPlay()
+        ClickNext()
+        ClickPrevious()
+}
+
+type State struct {
+        context IPlayerContext
+}
+
+func NewState(context IPlayerContext) *State <span class="cov10" title="53">{
+        return &amp;State{
+                context: context,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file26" style="display: none">package main
+
+import "fmt"
+
+type LockedState struct {
+        *State
+}
+
+func (s *LockedState) ClickLock() <span class="cov1" title="1">{
+        if s.context.GetIsPlaying() </span><span class="cov0" title="0">{
+                s.context.ChangeState(NewPlayingState(s.context))
+        }</span> else<span class="cov1" title="1"> {
+                s.context.ChangeState(NewReadyState(s.context))
+        }</span>
+}
+
+func (s *LockedState) ClickPlay() <span class="cov1" title="1">{
+        // locked
+        fmt.Println("Doing nothing...")
+}</span>
+
+func (s *LockedState) ClickNext() <span class="cov1" title="1">{
+        // locked
+        fmt.Println("Doing nothing...")
+}</span>
+
+func (s *LockedState) ClickPrevious() <span class="cov1" title="1">{
+        // locked
+        fmt.Println("Doing nothing...")
+}</span>
+
+func NewLockedState(context IPlayerContext) *LockedState <span class="cov10" title="7">{
+        return &amp;LockedState{
+                State: NewState(context),
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file27" style="display: none">package main
+
+import "fmt"
+
+type LockedStateMock struct {
+        *State
+}
+
+func (s *LockedStateMock) ClickLock() <span class="cov0" title="0">{
+        if s.context.GetIsPlaying() </span><span class="cov0" title="0">{
+                s.context.ChangeState(NewPlayingStateMock(s.context))
+        }</span> else<span class="cov0" title="0"> {
+                s.context.ChangeState(NewReadyStateMock(s.context))
+        }</span>
+}
+
+func (s *LockedStateMock) ClickPlay() <span class="cov0" title="0">{
+        // locked
+        fmt.Println("Doing nothing...")
+}</span>
+
+func (s *LockedStateMock) ClickNext() <span class="cov0" title="0">{
+        // locked
+        fmt.Println("Doing nothing...")
+}</span>
+
+func (s *LockedStateMock) ClickPrevious() <span class="cov0" title="0">{
+        // locked
+        fmt.Println("Doing nothing...")
+}</span>
+
+func NewLockedStateMock(context IPlayerContext) *LockedStateMock <span class="cov10" title="5">{
+        return &amp;LockedStateMock{
+                State: NewState(context),
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file28" style="display: none">package main
+
+func main() <span class="cov0" title="0">{
+
+        // Context
+        playerContext := NewPlayerContext() // Ready State
+        playerContext.ClickLock()           // goes to locked state
+
+        // Locked State
+        playerContext.ClickNext()     // do nothing
+        playerContext.ClickPlay()     // do nothing
+        playerContext.ClickPrevious() // do nothing
+        playerContext.ClickLock()     // go to ready state
+
+        // ready state
+        playerContext.ClickNext()     // goes to next song
+        playerContext.ClickPrevious() // goes to previous song
+        playerContext.ClickPlay()     // goes to playing state
+
+        // playing state
+        playerContext.ClickNext()     // goes to next song
+        playerContext.ClickPrevious() // goes to previous song
+        playerContext.ClickPlay()     // stops song (because isPlaying is true) and goes to ready state
+
+        // ready state
+        playerContext.ClickLock() // locks it
+
+        // locked state
+
+}</span>
+</pre>
+		
+		<pre class="file" id="file29" style="display: none">package main
+
+import "fmt"
+
+// Context
+type PlayerContext struct {
+        IsPlaying bool
+        State     IState
+}
+
+func (context *PlayerContext) GetState() IState <span class="cov0" title="0">{
+        return context.State
+}</span>
+
+func (context *PlayerContext) ChangeState(state IState) <span class="cov0" title="0">{
+        context.State = state
+}</span>
+
+func (context *PlayerContext) ClickLock() <span class="cov0" title="0">{
+        fmt.Printf("[CLICK LOCK] =&gt; State: %T\n", context.State)
+        context.State.ClickLock()
+}</span>
+
+func (context *PlayerContext) ClickPlay() <span class="cov0" title="0">{
+        context.State.ClickPlay()
+}</span>
+
+func (context *PlayerContext) ClickNext() <span class="cov0" title="0">{
+        context.State.ClickNext()
+}</span>
+
+func (context *PlayerContext) ClickPrevious() <span class="cov0" title="0">{
+        context.State.ClickPrevious()
+}</span>
+
+// State may call some methods in the context
+func (context *PlayerContext) NextSong() <span class="cov0" title="0">{
+        fmt.Println("Next song...")
+}</span>
+
+func (context *PlayerContext) PreviousSong() <span class="cov0" title="0">{
+        fmt.Println("Previous song...")
+}</span>
+
+func (context *PlayerContext) StopSong() <span class="cov0" title="0">{
+        fmt.Println("Stop song...")
+}</span>
+
+func (context *PlayerContext) GetIsPlaying() bool <span class="cov0" title="0">{
+        return context.IsPlaying
+}</span>
+
+func (context *PlayerContext) SetIsPlaying(isPlaying bool) <span class="cov0" title="0">{
+        context.IsPlaying = isPlaying
+}</span>
+
+func NewPlayerContext() *PlayerContext <span class="cov0" title="0">{
+        playerContext := &amp;PlayerContext{}
+        readyState := NewReadyState(playerContext)
+        playerContext.State = readyState
+        return playerContext
+}</span>
+</pre>
+		
+		<pre class="file" id="file30" style="display: none">package main
+
+import "fmt"
+
+// Context
+type PlayerContextMock struct {
+        IsPlaying bool
+        State     IState
+}
+
+var (
+        NextSongClicked     = false
+        PreviousSongClicked = false
+        StopSongClicked     = false
+)
+
+func (context *PlayerContextMock) GetState() IState <span class="cov8" title="11">{
+        return context.State
+}</span>
+
+func (context *PlayerContextMock) ChangeState(state IState) <span class="cov6" title="5">{
+        context.State = state
+}</span>
+
+func (context *PlayerContextMock) ClickLock() <span class="cov0" title="0">{
+        fmt.Printf("[CLICK LOCK] =&gt; State: %T\n", context.State)
+        context.State.ClickLock()
+}</span>
+
+func (context *PlayerContextMock) ClickPlay() <span class="cov0" title="0">{
+        context.State.ClickPlay()
+}</span>
+
+func (context *PlayerContextMock) ClickNext() <span class="cov0" title="0">{
+        context.State.ClickNext()
+}</span>
+
+func (context *PlayerContextMock) ClickPrevious() <span class="cov0" title="0">{
+        context.State.ClickPrevious()
+}</span>
+
+// State may call some methods in the context
+func (context *PlayerContextMock) NextSong() <span class="cov3" title="2">{
+        NextSongClicked = true
+        fmt.Println("Next song...")
+}</span>
+
+func (context *PlayerContextMock) PreviousSong() <span class="cov3" title="2">{
+        PreviousSongClicked = true
+        fmt.Println("Previous song...")
+}</span>
+
+func (context *PlayerContextMock) StopSong() <span class="cov1" title="1">{
+        StopSongClicked = true
+        fmt.Println("Stop song...")
+}</span>
+
+func (context *PlayerContextMock) GetIsPlaying() bool <span class="cov6" title="5">{
+        return context.IsPlaying
+}</span>
+
+func (context *PlayerContextMock) SetIsPlaying(isPlaying bool) <span class="cov5" title="4">{
+        context.IsPlaying = isPlaying
+}</span>
+
+func NewPlayerContextMock() *PlayerContextMock <span class="cov10" title="16">{
+        playerContext := &amp;PlayerContextMock{}
+        readyState := NewReadyStateMock(playerContext)
+        playerContext.State = readyState
+        return playerContext
+}</span>
+</pre>
+		
+		<pre class="file" id="file31" style="display: none">package main
+
+type PlayingState struct {
+        *State
+}
+
+func (s *PlayingState) ClickLock() <span class="cov1" title="1">{
+        s.context.ChangeState(NewLockedState(s.context))
+}</span>
+
+func (s *PlayingState) ClickPlay() <span class="cov4" title="2">{
+        if s.context.GetIsPlaying() </span><span class="cov1" title="1">{
+                s.context.StopSong()
+                s.context.ChangeState(NewReadyState(s.context))
+        }</span> else<span class="cov1" title="1"> {
+                s.context.SetIsPlaying(true)
+        }</span>
+}
+
+func (s *PlayingState) ClickNext() <span class="cov1" title="1">{
+        s.context.NextSong()
+}</span>
+
+func (s *PlayingState) ClickPrevious() <span class="cov1" title="1">{
+        s.context.PreviousSong()
+}</span>
+
+func NewPlayingState(context IPlayerContext) *PlayingState <span class="cov10" title="7">{
+        return &amp;PlayingState{
+                State: NewState(context),
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file32" style="display: none">package main
+
+type PlayingStateMock struct {
+        *State
+}
+
+func (s *PlayingStateMock) ClickLock() <span class="cov0" title="0">{
+        s.context.ChangeState(NewLockedStateMock(s.context))
+}</span>
+
+func (s *PlayingStateMock) ClickPlay() <span class="cov0" title="0">{
+        if s.context.GetIsPlaying() </span><span class="cov0" title="0">{
+                s.context.StopSong()
+                s.context.ChangeState(NewReadyStateMock(s.context))
+        }</span> else<span class="cov0" title="0"> {
+                s.context.SetIsPlaying(true)
+        }</span>
+}
+
+func (s *PlayingStateMock) ClickNext() <span class="cov0" title="0">{
+        s.context.NextSong()
+}</span>
+
+func (s *PlayingStateMock) ClickPrevious() <span class="cov0" title="0">{
+        s.context.PreviousSong()
+}</span>
+
+func NewPlayingStateMock(context IPlayerContext) *PlayingStateMock <span class="cov10" title="6">{
+        return &amp;PlayingStateMock{
+                State: NewState(context),
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file33" style="display: none">package main
+
+type ReadyState struct {
+        *State
+}
+
+func (s *ReadyState) ClickLock() <span class="cov1" title="1">{
+        s.context.ChangeState(NewLockedState(s.context))
+}</span>
+
+func (s *ReadyState) ClickPlay() <span class="cov1" title="1">{
+        s.context.SetIsPlaying(true)
+        s.context.ChangeState(NewPlayingState(s.context))
+}</span>
+
+func (s *ReadyState) ClickNext() <span class="cov1" title="1">{
+        s.context.NextSong()
+}</span>
+
+func (s *ReadyState) ClickPrevious() <span class="cov1" title="1">{
+        s.context.PreviousSong()
+}</span>
+
+func NewReadyState(context IPlayerContext) *ReadyState <span class="cov10" title="7">{
+        return &amp;ReadyState{
+                State: NewState(context),
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file34" style="display: none">package main
+
+type ReadyStateMock struct {
+        *State
+}
+
+func (s *ReadyStateMock) ClickLock() <span class="cov0" title="0">{
+        s.context.ChangeState(NewLockedStateMock(s.context))
+}</span>
+
+func (s *ReadyStateMock) ClickPlay() <span class="cov0" title="0">{
+        s.context.SetIsPlaying(true)
+        s.context.ChangeState(NewPlayingStateMock(s.context))
+}</span>
+
+func (s *ReadyStateMock) ClickNext() <span class="cov0" title="0">{
+        s.context.NextSong()
+}</span>
+
+func (s *ReadyStateMock) ClickPrevious() <span class="cov0" title="0">{
+        s.context.PreviousSong()
+}</span>
+
+func NewReadyStateMock(context IPlayerContext) *ReadyStateMock <span class="cov10" title="21">{
+        return &amp;ReadyStateMock{
+                State: NewState(context),
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file35" style="display: none">package main
+
+import (
+        "fmt"
+        "strconv"
+        "strings"
+)
+
+type ICache interface {
+        SetEvictStrategy(evictStrategy IEvictStrategy)
+        SetMaxCapacity(maxCapacity int)
+        Add(key, value string)
+        PrintCache()
+        Evict(key string)
+}
+
+// Context
+type Cache struct {
+        evictStrategy IEvictStrategy
+        storage       map[string]string
+        maxCapacity   int
+}
+
+func (c *Cache) SetEvictStrategy(evictStrategy IEvictStrategy) <span class="cov1" title="1">{
+        c.evictStrategy = evictStrategy
+}</span>
+
+func (c *Cache) SetMaxCapacity(maxCapacity int) <span class="cov1" title="1">{
+        c.maxCapacity = maxCapacity
+}</span>
+
+func (c *Cache) Add(key, value string) <span class="cov10" title="6">{
+        if len(c.storage) &gt;= c.maxCapacity </span><span class="cov6" title="3">{
+                c.Evict(key)
+        }</span>
+        <span class="cov10" title="6">c.storage[key] = value</span>
+}
+
+func (c *Cache) PrintCache() <span class="cov1" title="1">{
+        for key, value := range c.storage </span><span class="cov4" title="2">{
+                fmt.Printf("[%s]: [%s]\n", key, value)
+        }</span>
+        <span class="cov1" title="1">fmt.Println("================================")</span>
+}
+
+func (c *Cache) Evict(key string) <span class="cov6" title="3">{
+        c.evictStrategy.Evict(c)
+
+        index := strings.Split(key, "key")
+        indexInt, _ := strconv.Atoi(index[1])
+        indexToBeDeleted := indexInt - 2
+        keyToBeDeleted := fmt.Sprintf("key%d", indexToBeDeleted)
+        delete(c.storage, keyToBeDeleted)
+}</span>
+
+func NewCache(evictStrategy IEvictStrategy) *Cache <span class="cov1" title="1">{
+        return &amp;Cache{
+                evictStrategy: evictStrategy,
+                storage:       make(map[string]string),
+                maxCapacity:   2,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file36" style="display: none">package main
+
+import (
+        "fmt"
+        "strconv"
+        "strings"
+)
+
+type CacheMocks struct {
+        evictStrategy IEvictStrategy
+        storage       map[string]string
+        maxCapacity   int
+}
+
+func (c *CacheMocks) SetEvictStrategy(evictStrategy IEvictStrategy) <span class="cov0" title="0">{
+        c.evictStrategy = evictStrategy
+}</span>
+
+func (c *CacheMocks) SetMaxCapacity(maxCapacity int) <span class="cov0" title="0">{
+        c.maxCapacity = maxCapacity
+}</span>
+
+func (c *CacheMocks) Add(key, value string) <span class="cov0" title="0">{
+        if len(c.storage) &gt;= c.maxCapacity </span><span class="cov0" title="0">{
+                c.Evict(key)
+        }</span>
+        <span class="cov0" title="0">c.storage[key] = value</span>
+}
+
+var PrintCacheCalled bool = false
+
+func (c *CacheMocks) PrintCache() <span class="cov0" title="0">{
+        PrintCacheCalled = true
+}</span>
+
+func (c *CacheMocks) Evict(key string) <span class="cov0" title="0">{
+        c.evictStrategy.Evict(c)
+
+        index := strings.Split(key, "key")
+        indexInt, _ := strconv.Atoi(index[1])
+        indexToBeDeleted := indexInt - 2
+        keyToBeDeleted := fmt.Sprintf("key%d", indexToBeDeleted)
+        delete(c.storage, keyToBeDeleted)
+}</span>
+
+func NewCacheMocks(evictStrategy IEvictStrategy) *CacheMocks <span class="cov8" title="1">{
+        return &amp;CacheMocks{
+                evictStrategy: evictStrategy,
+                storage:       make(map[string]string),
+                maxCapacity:   2,
+        }
+}</span>
+
+var MapMocks = map[string]string{
+        "key1": "value1",
+        "key2": "value2",
+        "key3": "value3",
+        "key4": "value4",
+        "key5": "value5",
+}
+</pre>
+		
+		<pre class="file" id="file37" style="display: none">package main
+
+import "fmt"
+
+type FIFOStrategy struct{}
+
+func (strategy *FIFOStrategy) Evict(ICache) <span class="cov0" title="0">{
+        fmt.Println("Removing using FIFO strategy...")
+}</span>
+
+func NewFIFOStrategy() *FIFOStrategy <span class="cov0" title="0">{
+        return &amp;FIFOStrategy{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file38" style="display: none">package main
+
+type FIFOStrategyMocks struct{}
+
+var FifoStrategyEvictCalled bool = false
+
+func (strategy *FIFOStrategyMocks) Evict(ICache) <span class="cov10" title="3">{
+        FifoStrategyEvictCalled = true
+}</span>
+
+func NewFIFOStrategyMocks() *FIFOStrategyMocks <span class="cov1" title="1">{
+        return &amp;FIFOStrategyMocks{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file39" style="display: none">package main
+
+import "fmt"
+
+type LFUStrategy struct{}
+
+func (strategy *LFUStrategy) Evict(ICache) <span class="cov0" title="0">{
+        fmt.Println("Removing using LFU strategy...")
+}</span>
+
+func NewLFUStrategy() *LFUStrategy <span class="cov0" title="0">{
+        return &amp;LFUStrategy{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file40" style="display: none">package main
+
+type LFUStrategyMock struct{}
+
+var LFUStrategyMockEvictCalled bool = false
+
+func (strategy *LFUStrategyMock) Evict(ICache) <span class="cov0" title="0">{
+        LFUStrategyMockEvictCalled = true
+}</span>
+
+func NewLFUStrategyMock() *LFUStrategyMock <span class="cov8" title="1">{
+        return &amp;LFUStrategyMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file41" style="display: none">package main
+
+import "fmt"
+
+type LRUStrategy struct{}
+
+func (strategy *LRUStrategy) Evict(ICache) <span class="cov0" title="0">{
+        fmt.Println("Removing using LRU strategy...")
+}</span>
+
+func NewLRUStrategy() *LRUStrategy <span class="cov0" title="0">{
+        return &amp;LRUStrategy{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file42" style="display: none">package main
+
+type LRUStrategyMock struct{}
+
+var LRUStrategyMockEvictCalled bool = false
+
+func (strategy *LRUStrategyMock) Evict(ICache) <span class="cov0" title="0">{
+        LRUStrategyMockEvictCalled = true
+}</span>
+
+func NewLRUStrategyMock() *LRUStrategyMock <span class="cov0" title="0">{
+        return &amp;LRUStrategyMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file43" style="display: none">package main
+
+func main() <span class="cov0" title="0">{
+        // first strategy
+        lfuStrategy := NewLFUStrategy()
+
+        // context
+        cache := NewCache(lfuStrategy)
+
+        // add some content
+        cache.Add("key1", "value1")
+        cache.Add("key2", "value2")
+        cache.Add("key3", "value3")
+
+        cache.PrintCache()
+
+        // set another strategy
+        cache.SetEvictStrategy(NewFIFOStrategy())
+
+        cache.Add("key4", "value4")
+        cache.Add("key5", "value5")
+
+        cache.PrintCache()
+
+        cache.SetEvictStrategy(NewLRUStrategy())
+
+        cache.Add("key6", "value6")
+        cache.Add("key7", "value7")
+
+        cache.PrintCache()
+
+}</span>
+</pre>
+		
+		<pre class="file" id="file44" style="display: none">package main
+
+type ConcreteStrategyAdd struct{}
+
+func (strategy *ConcreteStrategyAdd) Execute(a, b int) int <span class="cov0" title="0">{
+        return a + b
+}</span>
+
+func NewConcreteStrategyAdd() *ConcreteStrategyAdd <span class="cov0" title="0">{
+        return &amp;ConcreteStrategyAdd{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file45" style="display: none">package main
+
+type ConcreteStrategyAddMock struct{}
+
+var AddStrategyCalled bool = false
+
+func (strategy *ConcreteStrategyAddMock) Execute(a, b int) int <span class="cov1" title="1">{
+        AddStrategyCalled = true
+        return a + b
+}</span>
+
+func NewConcreteStrategyAddMock() *ConcreteStrategyAddMock <span class="cov10" title="2">{
+        return &amp;ConcreteStrategyAddMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file46" style="display: none">package main
+
+type ConcreteStrategyMultiply struct{}
+
+func (strategy *ConcreteStrategyMultiply) Execute(a, b int) int <span class="cov0" title="0">{
+        return a * b
+}</span>
+
+func NewConcreteStrategyMultiply() *ConcreteStrategyMultiply <span class="cov0" title="0">{
+        return &amp;ConcreteStrategyMultiply{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file47" style="display: none">package main
+
+type ConcreteStrategyMultiplyMock struct{}
+
+var StrategyMultiplyCalled bool = false
+
+func (strategy *ConcreteStrategyMultiplyMock) Execute(a, b int) int <span class="cov1" title="1">{
+        StrategyMultiplyCalled = true
+        return a * b
+}</span>
+
+func NewConcreteStrategyMultiplyMock() *ConcreteStrategyMultiplyMock <span class="cov10" title="2">{
+        return &amp;ConcreteStrategyMultiplyMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file48" style="display: none">package main
+
+type ConcreteStrategySubtract struct{}
+
+func (strategy *ConcreteStrategySubtract) Execute(a, b int) int <span class="cov0" title="0">{
+        return a - b
+}</span>
+
+func NewConcreteStrategySubtract() *ConcreteStrategySubtract <span class="cov0" title="0">{
+        return &amp;ConcreteStrategySubtract{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file49" style="display: none">package main
+
+type ConcreteStrategySubtractMock struct{}
+
+var SubtractStrategyCalled bool = false
+
+func (strategy *ConcreteStrategySubtractMock) Execute(a, b int) int <span class="cov1" title="1">{
+        SubtractStrategyCalled = true
+        return a - b
+}</span>
+
+func NewConcreteStrategySubtractMock() *ConcreteStrategySubtractMock <span class="cov10" title="2">{
+        return &amp;ConcreteStrategySubtractMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file50" style="display: none">package main
+
+type Context struct {
+        strategy IStrategy
+}
+
+func (context *Context) SetStrategy(strategy IStrategy) <span class="cov10" title="6">{
+        context.strategy = strategy
+}</span>
+
+func (context *Context) DoSomething(a, b int) int <span class="cov6" title="3">{
+        return context.strategy.Execute(a, b)
+}</span>
+
+func NewContext() *Context <span class="cov1" title="1">{
+        return &amp;Context{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file51" style="display: none">package main
+
+type ContextMock struct {
+        strategy IStrategy
+}
+
+func (context *ContextMock) SetStrategy(strategy IStrategy) <span class="cov0" title="0">{
+        context.strategy = strategy
+}</span>
+
+func (context *ContextMock) DoSomething(a, b int) int <span class="cov0" title="0">{
+        return context.strategy.Execute(a, b)
+}</span>
+
+func NewContextMock() *ContextMock <span class="cov8" title="1">{
+        return &amp;ContextMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file52" style="display: none">package main
+
+import "fmt"
+
+func main() <span class="cov0" title="0">{
+        // Create strategies
+        addStrategy := NewConcreteStrategyAdd()
+        subtractStrategy := NewConcreteStrategySubtract()
+        multiplyStrategy := NewConcreteStrategyMultiply()
+
+        // get context
+        context := NewContext()
+
+        // do something for each different strategy
+        context.SetStrategy(addStrategy)
+        fmt.Printf("%d + %d = %d\n", 40, 40, context.DoSomething(40, 40))
+
+        context.SetStrategy(subtractStrategy)
+        fmt.Printf("%d - %d = %d\n", 40, 40, context.DoSomething(40, 40))
+
+        context.SetStrategy(multiplyStrategy)
+        fmt.Printf("%d * %d = %d\n", 40, 40, context.DoSomething(40, 40))
+
+}</span>
+</pre>
+		
+		<pre class="file" id="file53" style="display: none">package main
+
+import "fmt"
+
+type EmailOTP struct {
+        OTP
+        randomOTP, message string
+}
+
+func (email *EmailOTP) generateRandomOTP(length int) string <span class="cov8" title="1">{
+        fmt.Println("[EMAIL] Generating random OTP...")
+
+        return email.randomOTP[:length]
+}</span>
+
+func (email *EmailOTP) getMessage(otp string) string <span class="cov8" title="1">{
+        fmt.Printf("[EMAIL] Getting message from OTP %s\n", otp)
+
+        return email.message
+}</span>
+
+func (email *EmailOTP) sendNotification(message string) error <span class="cov8" title="1">{
+        fmt.Printf("[EMAIL] Notification sent with message %s\n", message)
+        return nil
+}</span>
+
+func (email *EmailOTP) publishMetrics() <span class="cov0" title="0">{
+        fmt.Println("[EMAIL] Publishing metrics...")
+}</span>
+
+func NewEmailOTP(randomOTP, message string) *EmailOTP <span class="cov8" title="1">{
+        return &amp;EmailOTP{
+                randomOTP: randomOTP,
+                message:   message,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file54" style="display: none">package main
+
+type EmailOTPMock struct {
+        OTPMock
+}
+
+func (sms *EmailOTPMock) generateRandomOTP(length int) string <span class="cov1" title="1">{
+        return ""
+}</span>
+
+func (sms *EmailOTPMock) getMessage(otp string) string <span class="cov1" title="1">{
+        return ""
+}</span>
+
+func (sms *EmailOTPMock) sendNotification(message string) error <span class="cov1" title="1">{
+        return nil
+}</span>
+
+func (sms *EmailOTPMock) publishMetrics() {<span class="cov1" title="1">
+
+}</span>
+
+// mocks
+func (sms *EmailOTPMock) getEmailOTPLength() int <span class="cov10" title="3">{
+        return 2
+}</span>
+
+func (sms *EmailOTPMock) getEmailMessage() string <span class="cov10" title="3">{
+        return "[EMAIL] This is an OTP message"
+}</span>
+
+func (sms *EmailOTPMock) getRandomOTP() string <span class="cov10" title="3">{
+        return "456487945"
+}</span>
+
+func NewEmailOTPMock() *EmailOTPMock <span class="cov6" title="2">{
+        return &amp;EmailOTPMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file55" style="display: none">package main
+
+func main() <span class="cov0" title="0">{
+        // sms otp
+        message := "[SMS] This is an OTP message"
+        randomOTP := "1234556789"
+        smsOTP := NewSMSOTP(message, randomOTP)
+
+        // email otp
+        emailMessage := "[EMAIL] This is an OTP message"
+        emailRandomOTP := "456487945"
+        emailOTP := NewEmailOTP(emailRandomOTP, emailMessage)
+
+        // get otp
+        otp := NewOTP(smsOTP)
+
+        // generate sms otp using skeleton
+        otp.generateAndSendOTP(4)
+
+        // get otp with email
+        otp = NewOTP(emailOTP)
+
+        // generate email otp using skeleton
+        otp.generateAndSendOTP(5)
+
+}</span>
+</pre>
+		
+		<pre class="file" id="file56" style="display: none">package main
+
+import "fmt"
+
+type IOTP interface {
+        generateRandomOTP(length int) string
+        saveOTPCache(otp string)
+        getMessage(otp string) string
+        sendNotification(message string) error
+        publishMetrics()
+}
+
+// embedding an interface into a struct is Go way of creating an "abstract class"
+type OTP struct {
+        iOTP IOTP
+}
+
+// skeleton method
+func (o *OTP) generateAndSendOTP(otpLength int) error <span class="cov8" title="1">{
+        otp := o.iOTP.generateRandomOTP(otpLength)
+        o.iOTP.saveOTPCache(otp) // default method
+        message := o.iOTP.getMessage(otp)
+        err := o.iOTP.sendNotification(message)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov8" title="1">o.iOTP.publishMetrics()
+        return nil</span>
+}
+
+// default method
+func (o *OTP) saveOTPCache(otp string) <span class="cov0" title="0">{
+        fmt.Printf("[DEFAULT METHOD] Saving %s to cache\n", otp)
+}</span>
+
+func NewOTP(iotp IOTP) *OTP <span class="cov8" title="1">{
+        return &amp;OTP{
+                iOTP: iotp,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file57" style="display: none">package main
+
+type OTPMock struct {
+        iOTP IOTP
+}
+
+func (mock *OTPMock) generateAndSendOTP(otpLength int) error <span class="cov0" title="0">{
+        return nil
+}</span>
+
+func (mock *OTPMock) saveOTPCache(otp string) {<span class="cov8" title="1">
+
+}</span>
+
+func NewOTPMock(iotp IOTP) *OTPMock <span class="cov8" title="1">{
+        return &amp;OTPMock{
+                iOTP: iotp,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file58" style="display: none">package main
+
+import "fmt"
+
+type SMSOTP struct {
+        OTP
+        randomOTP string
+        message   string
+}
+
+func (sms *SMSOTP) generateRandomOTP(length int) string <span class="cov8" title="1">{
+        fmt.Println("[SMS] Generating random OTP...")
+
+        return sms.randomOTP[:length]
+}</span>
+
+func (sms *SMSOTP) getMessage(otp string) string <span class="cov8" title="1">{
+        fmt.Printf("[SMS] Getting message from OTP %s\n", otp)
+
+        return sms.message
+}</span>
+
+func (sms *SMSOTP) sendNotification(message string) error <span class="cov8" title="1">{
+        fmt.Printf("[SMS] Notification sent with message %s\n", message)
+        return nil
+}</span>
+
+func (sms *SMSOTP) publishMetrics() <span class="cov0" title="0">{
+        fmt.Println("[SMS] Publishing metrics...")
+}</span>
+
+func NewSMSOTP(message, randomOTP string) *SMSOTP <span class="cov8" title="1">{
+        return &amp;SMSOTP{
+                randomOTP: randomOTP,
+                message:   message,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file59" style="display: none">package main
+
+type SMSOTPMock struct {
+        OTPMock
+}
+
+func (sms *SMSOTPMock) generateRandomOTP(length int) string <span class="cov0" title="0">{
+        return ""
+}</span>
+
+func (sms *SMSOTPMock) getMessage(otp string) string <span class="cov0" title="0">{
+        return ""
+}</span>
+
+func (sms *SMSOTPMock) sendNotification(message string) error <span class="cov0" title="0">{
+        return nil
+}</span>
+
+func (sms *SMSOTPMock) publishMetrics() {<span class="cov0" title="0">
+
+}</span>
+
+// mocks
+func (sms *SMSOTPMock) getSMSOTPLength() int <span class="cov6" title="2">{
+        return 4
+}</span>
+
+func (sms *SMSOTPMock) getSMSMessage() string <span class="cov10" title="3">{
+        return "[SMS] This is an OTP message"
+}</span>
+
+func (sms *SMSOTPMock) getRandomOTP() string <span class="cov10" title="3">{
+        return "1234556789"
+}</span>
+
+func NewSMSOTPMock() *SMSOTPMock <span class="cov1" title="1">{
+        return &amp;SMSOTPMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file60" style="display: none">package visitor
+
+import (
+        "fmt"
+)
+
+type Circle struct {
+        x, y int
+}
+
+func (c *Circle) Move(x, y int) <span class="cov8" title="1">{
+        c.x = x
+        c.y = y
+}</span>
+
+func (c *Circle) Draw() <span class="cov0" title="0">{
+        fmt.Printf("Drawing circle at (%d, %d)\n", c.x, c.y)
+}</span>
+
+func (c *Circle) Accept(v IVisitor) <span class="cov8" title="1">{
+        v.visitCircle(c)
+}</span>
+
+func NewCircle() *Circle <span class="cov8" title="1">{
+        return &amp;Circle{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file61" style="display: none">package visitor
+
+type CircleMock struct {
+        X, Y int
+}
+
+func (c *CircleMock) Move(x, y int) {<span class="cov0" title="0">
+
+}</span>
+
+func (c *CircleMock) Draw() {<span class="cov0" title="0">
+
+}</span>
+
+func (c *CircleMock) Accept(v IVisitor) {<span class="cov0" title="0">
+
+}</span>
+
+func NewCircleMock() *CircleMock <span class="cov8" title="1">{
+        return &amp;CircleMock{
+                X: 10,
+                Y: 20,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file62" style="display: none">package visitor
+
+import (
+        "fmt"
+)
+
+type Dot struct {
+        x, y int
+}
+
+func (d *Dot) Move(x, y int) <span class="cov8" title="1">{
+        d.x = x
+        d.y = y
+}</span>
+
+func (d *Dot) Draw() <span class="cov0" title="0">{
+        fmt.Printf("Drawing rectangle at (%d, %d)\n", d.x, d.y)
+}</span>
+
+func (d *Dot) Accept(v IVisitor) <span class="cov8" title="1">{
+        v.visitDot(d)
+}</span>
+
+func NewDot() *Dot <span class="cov8" title="1">{
+        return &amp;Dot{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file63" style="display: none">package visitor
+
+type DotMock struct {
+        X, Y int
+}
+
+func NewDotMock() *DotMock <span class="cov8" title="1">{
+        return &amp;DotMock{
+                X: 10,
+                Y: 20,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file64" style="display: none">package visitor
+
+import "fmt"
+
+type ExportXMLVisitor struct{}
+
+func (visitor *ExportXMLVisitor) visitCircle(c *Circle) <span class="cov0" title="0">{
+        fmt.Printf("Exporting XML of Circle with coordinates (%d, %d)\n", c.x, c.y)
+}</span>
+
+func (visitor *ExportXMLVisitor) visitRectangle(r *Rectangle) <span class="cov0" title="0">{
+        fmt.Printf("Exporting XML of Rectangle with coordinates (%d, %d)\n", r.x, r.y)
+}</span>
+
+func (visitor *ExportXMLVisitor) visitDot(d *Dot) <span class="cov0" title="0">{
+        fmt.Printf("Exporting XML of Dot with coordinates (%d, %d)\n", d.x, d.y)
+}</span>
+
+func NewExportXMLVisitor() *ExportXMLVisitor <span class="cov0" title="0">{
+        return &amp;ExportXMLVisitor{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file65" style="display: none">package visitor
+
+import (
+        "fmt"
+)
+
+type Rectangle struct {
+        x, y int
+}
+
+func (r *Rectangle) Move(x, y int) <span class="cov8" title="1">{
+        r.x = x
+        r.y = y
+}</span>
+
+func (r *Rectangle) Draw() <span class="cov0" title="0">{
+        fmt.Printf("Drawing rectangle at (%d, %d)\n", r.x, r.y)
+}</span>
+
+func (r *Rectangle) Accept(v IVisitor) <span class="cov8" title="1">{
+        v.visitRectangle(r)
+}</span>
+
+func NewRectangle() *Rectangle <span class="cov8" title="1">{
+        return &amp;Rectangle{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file66" style="display: none">package visitor
+
+type RectangleMock struct {
+        X, Y int
+}
+
+func NewRectangleMock() *RectangleMock <span class="cov8" title="1">{
+        return &amp;RectangleMock{
+                X: 10,
+                Y: 20,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file67" style="display: none">package visitor
+
+var VisitCircleCalled bool = false
+var VisitRectangleCalled bool = false
+var VisitDotCalled bool = false
+
+type ExportXMLVisitorMock struct{}
+
+func (mock *ExportXMLVisitorMock) visitCircle(v *Circle) <span class="cov1" title="1">{
+        VisitCircleCalled = true
+}</span>
+
+func (mock *ExportXMLVisitorMock) visitRectangle(v *Rectangle) <span class="cov1" title="1">{
+        VisitRectangleCalled = true
+}</span>
+
+func (mock *ExportXMLVisitorMock) visitDot(v *Dot) <span class="cov1" title="1">{
+        VisitDotCalled = true
+}</span>
+
+func NewExportXMLVisitorMock() *ExportXMLVisitorMock <span class="cov10" title="3">{
+        return &amp;ExportXMLVisitorMock{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file68" style="display: none">package implementations
+
+import "base/CreationalPatterns/AbstractFactory/SimpleFactory/interfaces"
+
+// Concrete Product
+type Ak47 struct {
+        Gun
+}
+
+func NewAK47() interfaces.IGun <span class="cov8" title="1">{
+        return &amp;Ak47{
+                Gun: Gun{
+                        name:  "AK47",
+                        power: 4,
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file69" style="display: none">package implementations
+
+type Gun struct {
+        name  string
+        power int
+}
+
+func (g *Gun) GetName() string <span class="cov8" title="3">{
+        return g.name
+}</span>
+
+func (g *Gun) SetName(name string) <span class="cov1" title="1">{
+        g.name = name
+}</span>
+
+func (g *Gun) GetPower() int <span class="cov8" title="3">{
+        return g.power
+}</span>
+
+func (g *Gun) SetPower(power int) <span class="cov1" title="1">{
+        g.power = power
+}</span>
+
+func NewGun() *Gun <span class="cov10" title="4">{
+        return &amp;Gun{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file70" style="display: none">package implementations
+
+import (
+        "base/CreationalPatterns/AbstractFactory/SimpleFactory/interfaces"
+        "fmt"
+)
+
+// Look how we didn't have to have a "IGunFactory" interface
+// because we're dealing with only different products, not different brands.
+func NewGunFactory(gunType string) (interfaces.IGun, error) <span class="cov0" title="0">{
+        switch gunType </span>{
+        case "ak47":<span class="cov0" title="0">
+                return NewAK47(), nil</span>
+        case "musket":<span class="cov0" title="0">
+                return NewMusket(), nil</span>
+        default:<span class="cov0" title="0">
+                return nil, fmt.Errorf("gun type is not known")</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file71" style="display: none">package implementations
+
+import "base/CreationalPatterns/AbstractFactory/SimpleFactory/interfaces"
+
+// Concrete Product
+type Musket struct {
+        Gun
+}
+
+func NewMusket() interfaces.IGun <span class="cov8" title="1">{
+        return &amp;Musket{
+                Gun: Gun{
+                        name:  "Musket",
+                        power: 1,
+                },
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file72" style="display: none">package implementations
+
+import (
+        "base/CreationalPatterns/Builder/another_example/domain"
+        "base/CreationalPatterns/Builder/another_example/interfaces"
+)
+
+type director struct {
+        builder interfaces.ISensorsBuilder
+}
+
+func (d *director) SetBuilder(b interfaces.ISensorsBuilder) <span class="cov8" title="1">{
+        d.builder = b
+}</span>
+
+func (d *director) CreateSensor(opts domain.SensorOpts) domain.Sensor <span class="cov0" title="0">{
+        d.builder.Reset()
+        d.builder.SetThreshold(opts.Threshold)
+        d.builder.SetHigher(opts.Higher)
+        d.builder.SetLower(opts.Lower)
+        d.builder.SetTSample(opts.TSample)
+        d.builder.SetBorder(opts.Border)
+        d.builder.SetRisingEdge(opts.RisingEdge)
+        d.builder.SetFallingEdge(opts.FallingEdge)
+        d.builder.SetBetween(opts.Between)
+        d.builder.SetFirstThreshold(opts.FirstThreshold)
+        d.builder.SetSecondThreshold(opts.SecondThreshold)
+        d.builder.SetType(opts.Type)
+        d.builder.SetSocialContact(opts.SocialContact)
+        return d.builder.GetSensor()
+}</span>
+
+func NewDirector(builder interfaces.ISensorsBuilder) *director <span class="cov8" title="1">{
+        return &amp;director{
+                builder: builder,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file73" style="display: none">package implementations
+
+import "base/CreationalPatterns/Builder/another_example/domain"
+
+type SensorsBuilder struct {
+        obj        domain.SensorOpts
+        sensorType string
+}
+
+func (sb *SensorsBuilder) Reset() <span class="cov3" title="2">{
+        sb.obj = domain.SensorOpts{}
+}</span>
+
+func (sb *SensorsBuilder) SetThreshold(threshold int) <span class="cov1" title="1">{
+        sb.obj.Threshold = threshold
+}</span>
+
+func (sb *SensorsBuilder) SetHigher(higher bool) <span class="cov1" title="1">{
+        sb.obj.Higher = higher
+}</span>
+
+func (sb *SensorsBuilder) SetLower(lower bool) <span class="cov1" title="1">{
+        sb.obj.Lower = lower
+}</span>
+
+func (sb *SensorsBuilder) SetTSample(tsample uint) <span class="cov1" title="1">{
+        sb.obj.TSample = tsample
+}</span>
+
+func (sb *SensorsBuilder) SetBorder(border bool) <span class="cov1" title="1">{
+        sb.obj.Border = border
+}</span>
+
+func (sb *SensorsBuilder) SetRisingEdge(rising bool) <span class="cov1" title="1">{
+        sb.obj.RisingEdge = rising
+}</span>
+
+func (sb *SensorsBuilder) SetFallingEdge(falling bool) <span class="cov1" title="1">{
+        sb.obj.FallingEdge = falling
+}</span>
+
+func (sb *SensorsBuilder) SetBetween(between bool) <span class="cov1" title="1">{
+        sb.obj.Between = between
+}</span>
+
+func (sb *SensorsBuilder) SetFirstThreshold(threshold int) <span class="cov1" title="1">{
+        sb.obj.FirstThreshold = threshold
+}</span>
+
+func (sb *SensorsBuilder) SetSecondThreshold(threshold int) <span class="cov1" title="1">{
+        sb.obj.SecondThreshold = threshold
+}</span>
+
+func (sb *SensorsBuilder) SetType(whatType uint) <span class="cov1" title="1">{
+        sb.obj.Type = whatType
+}</span>
+
+func (sb *SensorsBuilder) SetSocialContact(socialContact string) <span class="cov1" title="1">{
+        sb.obj.SocialContact = socialContact
+}</span>
+
+func (sb *SensorsBuilder) GetSensor() domain.Sensor <span class="cov1" title="1">{
+        sensorOpts := &amp;domain.SensorOpts{
+                Threshold:       sb.obj.Threshold,
+                Higher:          sb.obj.Higher,
+                Lower:           sb.obj.Lower,
+                TSample:         sb.obj.TSample,
+                Border:          sb.obj.Border,
+                RisingEdge:      sb.obj.RisingEdge,
+                FallingEdge:     sb.obj.FallingEdge,
+                Between:         sb.obj.Between,
+                FirstThreshold:  sb.obj.FirstThreshold,
+                SecondThreshold: sb.obj.SecondThreshold,
+                Type:            sb.obj.Type,
+                SocialContact:   sb.obj.SocialContact,
+        }
+
+        sb.Reset()
+
+        return domain.Sensor{
+                sb.sensorType: sensorOpts,
+        }
+}</span>
+
+func NewSensorsBuilder(sensorType string) *SensorsBuilder <span class="cov10" title="16">{
+        return &amp;SensorsBuilder{
+                obj:        domain.SensorOpts{},
+                sensorType: sensorType,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file74" style="display: none">package implementations
+
+import "base/CreationalPatterns/Builder/conceptual_example/interfaces"
+
+func GetBuilder(builderType string) interfaces.IBuilder <span class="cov10" title="2">{
+        switch builderType </span>{
+        case "normal":<span class="cov1" title="1">
+                return NewNormalBuilder()</span>
+        case "igloo":<span class="cov1" title="1">
+                return NewIglooBuilder()</span>
+        default:<span class="cov0" title="0">
+                return nil</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file75" style="display: none">package implementations
+
+import (
+        "base/CreationalPatterns/Builder/conceptual_example/domain"
+        "base/CreationalPatterns/Builder/conceptual_example/interfaces"
+)
+
+type director struct {
+        builder interfaces.IBuilder
+}
+
+func (d *director) SetBuilder(b interfaces.IBuilder) <span class="cov10" title="3">{
+        d.builder = b
+}</span>
+
+func (d *director) BuildHouse() domain.House <span class="cov6" title="2">{
+        d.builder.SetDoorType()
+        d.builder.SetWindowType()
+        d.builder.SetNumFloor()
+        return d.builder.GetHouse()
+}</span>
+
+func NewDirector(builder interfaces.IBuilder) *director <span class="cov10" title="3">{
+        return &amp;director{
+                builder: builder,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file76" style="display: none">package implementations
+
+import "base/CreationalPatterns/Builder/conceptual_example/domain"
+
+type iglooBuilder struct {
+        windowType, doorType string
+        floor                int
+}
+
+func (i *iglooBuilder) SetWindowType() <span class="cov7" title="5">{
+        i.windowType = "Snow Window"
+}</span>
+
+func (i *iglooBuilder) SetDoorType() <span class="cov7" title="5">{
+        i.doorType = "Snow Door"
+}</span>
+
+func (i *iglooBuilder) SetNumFloor() <span class="cov7" title="5">{
+        i.floor = 1
+}</span>
+
+func (i *iglooBuilder) GetHouse() domain.House <span class="cov5" title="3">{
+        return domain.House{
+                WindowType: i.windowType,
+                DoorType:   i.doorType,
+                Floor:      i.floor,
+        }
+}</span>
+
+func NewIglooBuilder() *iglooBuilder <span class="cov10" title="10">{
+        return &amp;iglooBuilder{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file77" style="display: none">package implementations
+
+import "base/CreationalPatterns/Builder/conceptual_example/domain"
+
+type normalBuilder struct {
+        windowType, doorType string
+        floor                int
+}
+
+func (n *normalBuilder) SetWindowType() <span class="cov7" title="5">{
+        n.windowType = "Wooden Window"
+}</span>
+
+func (n *normalBuilder) SetDoorType() <span class="cov7" title="5">{
+        n.doorType = "Wooden Door"
+}</span>
+
+func (n *normalBuilder) SetNumFloor() <span class="cov7" title="5">{
+        n.floor = 2
+}</span>
+
+func (n *normalBuilder) GetHouse() domain.House <span class="cov5" title="3">{
+        return domain.House{
+                WindowType: n.windowType,
+                DoorType:   n.doorType,
+                Floor:      n.floor,
+        }
+}</span>
+
+func NewNormalBuilder() *normalBuilder <span class="cov10" title="10">{
+        return &amp;normalBuilder{}
+}</span>
+</pre>
+		
+		<pre class="file" id="file78" style="display: none">package implementations
+
+type Person struct {
+        // Personal details
+        name, address, pin string
+        // Job details
+        workAddress, company, position string
+        salary                         float64
+}
+
+type PersonBuilder struct {
+        person *Person
+}
+
+type PersonAddressBuilder struct {
+        PersonBuilder
+}
+
+type PersonJobBuilder struct {
+        PersonBuilder
+}
+
+// PersonBuilder chain methods
+func (pb *PersonBuilder) Named(name string) *PersonBuilder <span class="cov1" title="1">{
+        pb.person.name = name
+        return pb
+}</span>
+
+func (pb *PersonBuilder) Lives() *PersonAddressBuilder <span class="cov1" title="1">{
+        return &amp;PersonAddressBuilder{*pb}
+}</span>
+
+// methods for PersonAddressBuilder
+func (pab *PersonAddressBuilder) At(address string) *PersonAddressBuilder <span class="cov1" title="1">{
+        pab.person.address = address
+        return pab
+}</span>
+
+func (pab *PersonAddressBuilder) WithPostalCode(pin string) *PersonAddressBuilder <span class="cov1" title="1">{
+        pab.person.pin = pin
+        return pab
+}</span>
+
+func (pb *PersonBuilder) Works() *PersonJobBuilder <span class="cov1" title="1">{
+        return &amp;PersonJobBuilder{*pb}
+}</span>
+
+// methods for PersonJobBuilder
+func (pjb *PersonJobBuilder) As(position string) *PersonJobBuilder <span class="cov1" title="1">{
+        pjb.person.position = position
+        return pjb
+}</span>
+
+func (pjb *PersonJobBuilder) For(company string) *PersonJobBuilder <span class="cov1" title="1">{
+        pjb.person.company = company
+        return pjb
+}</span>
+
+func (pjb *PersonJobBuilder) In(companyAddress string) *PersonJobBuilder <span class="cov1" title="1">{
+        pjb.person.workAddress = companyAddress
+        return pjb
+}</span>
+
+func (pjb *PersonJobBuilder) WithSalary(salary float64) *PersonJobBuilder <span class="cov1" title="1">{
+        pjb.person.salary = salary
+        return pjb
+}</span>
+
+// Reset person
+func (pb *PersonBuilder) Reset() <span class="cov1" title="1">{
+        pb.person = &amp;Person{}
+}</span>
+
+// Buikd a person from PersonBuilder
+func (pb *PersonBuilder) Build() *Person <span class="cov1" title="1">{
+        return pb.person
+}</span>
+
+func NewPersonBuilder() *PersonBuilder <span class="cov10" title="11">{
+        return &amp;PersonBuilder{person: &amp;Person{}}
+}</span>
+</pre>
+		
+		<pre class="file" id="file79" style="display: none">package implementations
+
+import (
+        "fmt"
+        "sync"
+)
+
+// The sync.Once will only perform the operation once
+var once sync.Once
+
+type single struct{}
+
+var singleInstance *single
+
+func GetInstance() *single <span class="cov10" title="4">{
+        if singleInstance == nil </span><span class="cov1" title="1">{
+                once.Do(
+                        func() </span><span class="cov1" title="1">{
+                                fmt.Println("Creating single instance...")
+                                singleInstance = &amp;single{}
+                        }</span>)
+        } else<span class="cov8" title="3"> {
+                fmt.Println("Instance already created!")
+        }</span>
+
+        <span class="cov10" title="4">return singleInstance</span>
+}
+</pre>
+		
+		<pre class="file" id="file80" style="display: none">package implementations
+
+import (
+        "fmt"
+        "sync"
+)
+
+var lock = &amp;sync.Mutex{}
+
+type single struct{}
+
+var singleInstance *single
+
+func GetInstance() *single <span class="cov10" title="4">{
+        if singleInstance == nil </span><span class="cov1" title="1">{
+                lock.Lock()
+                defer lock.Unlock()
+
+                // We're verifying here again because if more than one goroutine passes the first check, it'd create more than one instance
+                if singleInstance == nil </span><span class="cov1" title="1">{
+                        fmt.Println("Creating single instance.")
+                        singleInstance = &amp;single{}
+                }</span> else<span class="cov0" title="0"> {
+                        fmt.Println("Instance already created!")
+                }</span>
+
+        } else<span class="cov8" title="3"> {
+                fmt.Println("Instance already created!")
+        }</span>
+
+        <span class="cov10" title="4">return singleInstance</span>
+}
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>
