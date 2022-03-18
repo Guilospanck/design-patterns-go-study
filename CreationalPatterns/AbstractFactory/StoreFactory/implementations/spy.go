@@ -26,12 +26,12 @@ func (spy *shoeSpy) GetLogo() string {
 	return spy.Logo
 }
 
-// func NewShoeSpy() *shoeSpy {
-// 	Size := 10
-// 	Logo := "logo"
+func NewShoeSpy(size int, logo string) *shoeSpy {
+	Size := size
+	Logo := logo
 
-// 	return &shoeSpy{Size: Size, Logo: Logo}
-// }
+	return &shoeSpy{Size: Size, Logo: Logo}
+}
 
 type adidasShoeSpy struct {
 	shoeSpy
@@ -67,12 +67,12 @@ func (spy *shirtSpy) GetLogo() string {
 	return spy.Logo
 }
 
-// func NewShirtSpy() *shirtSpy {
-// 	Size := 10
-// 	Logo := "logo"
+func NewShirtSpy(size int, logo string) *shirtSpy {
+	Size := size
+	Logo := logo
 
-// 	return &shirtSpy{Size: Size, Logo: Logo}
-// }
+	return &shirtSpy{Size: Size, Logo: Logo}
+}
 
 type adidasShirtSpy struct {
 	shirtSpy
