@@ -8,9 +8,15 @@ import (
 func GetSportsFactory(brand string) (interfaces.ISportsFactory, error) {
 	switch brand {
 	case "adidas":
-		return &adidas{}, nil
+		return &adidas{
+			shoe:  &adidasShoe{},
+			shirt: &adidasShirt{},
+		}, nil
 	case "nike":
-		return &nike{}, nil
+		return &nike{
+			shoe:  &NikeShoe{},
+			shirt: &NikeShirt{},
+		}, nil
 	default:
 		return nil, fmt.Errorf("wrong brand type passed")
 	}
