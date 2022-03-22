@@ -1,16 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"base/StructuralPatterns/Adapter/implementations"
+	"fmt"
+)
 
 func main() {
-	lightningPort := NewLightningPort(6.5)
-	usbPort := NewUSBPort(65)
+	lightningPort := implementations.NewLightningPort(6.5)
+	usbPort := implementations.NewUSBPort(65)
 
 	client := NewClient()
 
 	// OK
 	fmt.Println("Sending data from a lightning port:")
-	client.transferData(lightningPort)
+	client.TransferData(lightningPort)
 
 	// ERROR
 	// client.transferData(usbPort)
@@ -20,5 +23,5 @@ func main() {
 	lightningAdapted := usbAdapter.transform()
 
 	fmt.Println("Sending data from a usb adapted to a lightning port:")
-	client.transferData(lightningAdapted)
+	client.TransferData(lightningAdapted)
 }

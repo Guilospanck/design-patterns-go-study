@@ -1,17 +1,22 @@
 package main
 
+import (
+	"base/StructuralPatterns/Adapter/implementations"
+	"base/StructuralPatterns/Adapter/interfaces"
+)
+
 type USBToLightningAdapter struct {
-	usb IUSBPort
+	usb interfaces.IUSBPort
 }
 
-func (adapter *USBToLightningAdapter) transform() ILightningPort {
+func (adapter *USBToLightningAdapter) transform() interfaces.ILightningPort {
 	data := adapter.usb.GetData()
-	lightningPort := NewLightningPort(float64(data))
+	lightningPort := implementations.NewLightningPort(float64(data))
 
 	return lightningPort
 }
 
-func NewUSBToLightningAdapter(usbPort IUSBPort) *USBToLightningAdapter {
+func NewUSBToLightningAdapter(usbPort interfaces.IUSBPort) *USBToLightningAdapter {
 	return &USBToLightningAdapter{
 		usb: usbPort,
 	}
