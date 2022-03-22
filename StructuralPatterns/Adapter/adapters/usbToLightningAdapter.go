@@ -1,4 +1,4 @@
-package main
+package adapters
 
 import (
 	"base/StructuralPatterns/Adapter/implementations"
@@ -9,7 +9,7 @@ type USBToLightningAdapter struct {
 	usb interfaces.IUSBPort
 }
 
-func (adapter *USBToLightningAdapter) transform() interfaces.ILightningPort {
+func (adapter *USBToLightningAdapter) Transform() interfaces.ILightningPort {
 	data := adapter.usb.GetData()
 	lightningPort := implementations.NewLightningPort(float64(data))
 
